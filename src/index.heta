@@ -1,0 +1,21 @@
+/*
+  template file for creating platform
+*/
+// add qsp units
+include ./qsp-units.heta
+
+// include module.heta type heta
+
+p1 @Record .= 1;
+
+// exports
+#export { format: JSON, filepath: output };
+#export { format: DBSolve, filepath: dbsolve };
+#export { format: SLV, filepath: model };
+
+//#export { format: XLSX, filepath: table, omitRows: 3, splitByClass: true };
+//#export { format: SBML, filepath: sbml, version: L2V4 };
+//#export { format: Simbio, filepath: simbio };
+//#export { format: Mrgsolve, filepath: mrgsolve };
+//#export { format: Matlab, filepath: matlab };
+//#export { format: Julia, filepath: julia };
