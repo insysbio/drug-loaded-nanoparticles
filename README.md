@@ -6,16 +6,19 @@
 
 PBPK Modeling For Therapeutic Nanoparticles Loaded With Drug
 
-This repository includes the model reproduced from the the paper:
+_Under development_
 
-> Comprehensive study of the drug delivery properties of poly(l-lactide)-poly(ethylene glycol) nanoparticles in rats and tumor-bearing mice. Journal of Controlled Release 261. DOI: [10.1016/j.jconrel.2017.06.006](http://dx.doi.org/10.1016/j.jconrel.2017.06.006)
+This repository includes the model reproduced from the the paper and datasets from figures and the supplementary materials:
+
+> Shalgunov et al. _Comprehensive study of the drug delivery properties of poly(l-lactide)-poly(ethylene glycol) nanoparticles in rats and tumor-bearing mice._ __Journal of Controlled Release 261.__ DOI: [10.1016/j.jconrel.2017.06.006](http://dx.doi.org/10.1016/j.jconrel.2017.06.006)
 
 # Authors
 
-[Evgeny Metelkin](https://github.com/metelkin) is the author of code in [Heta language](https://hetalang.githu.io) notation.
+[Evgeny Metelkin](https://github.com/metelkin) is an maintainer of the repository in [Heta language](https://hetalang.githu.io) notation.
 
 The model and data in the study were reproduced from the published study.
-The authors of the original study are: 
+The authors of the original study are:
+
 - Vladimir Shalgunov
 - Daria Zaytseva-Zotova
 - Arkadi Zintchenko
