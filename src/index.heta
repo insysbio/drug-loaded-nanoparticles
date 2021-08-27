@@ -4,9 +4,8 @@
 // add qsp units
 include ./qsp-units.heta
 
-// include module.heta type heta
-
-p1 @Record .= 1;
+// add main model
+include model.heta type heta
 
 // exports
 #export { format: JSON, filepath: output };

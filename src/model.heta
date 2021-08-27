@@ -1,0 +1,261 @@
+t {units: h};
+
+// compartments
+block @Compartment begin
+    V_B 'Blood volume' := W_animal * (w_B+ w_L*bto_L + w_S*bto_S + w_K*bto_K + w_U*bto_U) + W_T * bto_T;
+    V_L 'Liver volume' := W_animal * w_L*(1-bto_L);
+    V_S 'Spleen volume' := W_animal * w_S*(1-bto_S);
+    V_T 'Tumor colume' := W_T * (1-bto_T);
+    V_K 'Kidneys volume' := W_animal * w_K*(1-bto_K);
+    V_U 'Lungs volume' := W_animal * w_U*(1-bto_U);
+    V_R 'Rest of body (ROB) volume' := W_animal * w_R;
+
+    V_P 'Volume of blood plasma' := V_B * (1-hemato);
+end
+
+// species
+
+block @Species begin
+    NP_B 'Nanoparticles in blood' {compartment: V_B} .= 0;
+    NP_L 'Nanoparticles in liver' {compartment: V_L} .= 0;
+    NP_S 'Nanoparticles in spleen' {compartment: V_S} .= 0;
+    NP_T 'Nanoparticles in tumor' {compartment: V_T} .= 0;
+    NP_K 'Nanoparticles in kidneys' {compartment: V_K} .= 0;
+    NP_U 'Nanoparticles in lungs' {compartment: V_U} .= 0;
+    NP_R 'Nanoparticles in ROB' {compartment: V_R} .= 0;
+
+    D_B 'Free drug in blood' {compartment: V_B} .= 0;
+    D_L 'Free drug in liver' {compartment: V_L} .= 0;
+    D_S 'Free drug in spleen' {compartment: V_S} .= 0;
+    D_T 'Free drug in tumor' {compartment: V_T} .= 0;
+    D_K 'Free drug in kidneys' {compartment: V_K} .= 0;
+    D_U 'Free drug in lungs' {compartment: V_U} .= 0;
+    D_R 'Free drug in ROB' {compartment: V_R} .= 0;
+end
+
+// dynamic records
+response @Record .= 0;
+
+// doses
+single_dose_sw @TimeSwitcher { start: 0 };
+dose_NP_ug @Record {units: ug/mL} := dose_NP_ug_g * W_animal/V_B;        // {ug}
+dose_D_ug @Record {units: ug/mL} := delta * dose_D_ug_g * W_animal/V_B;  // {ug}
+NP_B [single_dose_sw]= dose_NP_ug;
+D_B [single_dose_sw]= dose_D_ug;
+
+// records
+block @Record begin
+    NP_P := NP_B / (hemato*Kp_BC_NP+1-hemato);
+    D_P := D_B / (hemato*Kp_BC_D+1-hemato);
+
+    // PS_L := PS_L_061;
+    PS_L := PS_L_061 * pow(w_L*W_animal/w_L_061/W_animal_061, b_PS) * exp(-koef_resp_L*response);
+    // PS_S := PS_S_061;
+    PS_S := PS_S_061 * pow(w_S*W_animal/w_S_061/W_animal_061, b_PS);
+    // PS_T := PS_T_061;
+    PS_T := PS_T_061 * pow(W_T/W_T_061, b_PS);
+    // PS_K := PS_K_061;
+    PS_K := PS_K_061 * pow(w_K*W_animal/w_K_061/W_animal_061, b_PS) * exp(-koef_resp_K*response);
+    // PS_U := PS_U_061;
+    PS_U := PS_U_061 * pow(w_U*W_animal/w_U_061/W_animal_061, b_PS);
+    // PS_R := PS_R_061;
+    PS_R := PS_R_061 * pow(w_R*W_animal/w_R_061/W_animal_061, b_PS) * exp(-koef_resp_R*response);
+
+    w_R := 1 - w_L - w_S - w_K - w_U - w_B - W_T/W_animal; // {--} weight ratio of rest of body
+    w_R_061 := 1 - w_L_061 - w_S_061 - w_K_061 - w_U_061 - w_B_m - W_T_061/W_animal_061;
+
+    Q_T @Record := Q_T_g * W_T;              // {ml/h}
+end
+// drug release
+v @Record := exp(-kdiff / (1 - gamma) * pow(t + timezero, 1 - gamma));
+vrel @Record := kdiff * pow(t + timezero, -gamma) * v * (1 - delta);   
+
+// reactions
+vdist_NP_L @Reaction {actors: NP_B <=> NP_L};
+vdist_NP_L := PS_L * (NP_P-NP_L/Kp_L_NP);
+
+vdist_NP_S @Reaction {actors: NP_B <=> NP_S};
+vdist_NP_S := PS_S * (NP_P-NP_S/Kp_S_NP);
+
+vdist_NP_T @Reaction {actors: NP_B <=> NP_T};
+vdist_NP_T := PS_T * (NP_P-NP_T/Kp_T_NP);
+
+vdist_NP_K @Reaction {actors: NP_B <=> NP_K};
+vdist_NP_K := PS_K * (NP_P-NP_K/Kp_K_NP);
+
+vdist_NP_U @Reaction {actors: NP_B <=> NP_U};
+vdist_NP_U := PS_U * (NP_P-NP_U/Kp_U_NP);
+
+vdist_NP_R @Reaction {actors: NP_B <=> NP_R};
+vdist_NP_R := PS_R * (NP_P-NP_R/Kp_R_NP);
+
+vcl_NP_L @Reaction {actors: NP_L => };
+vcl_NP_L := V_L * 0;
+
+vcl_NP_S @Reaction {actors: NP_S => };
+vcl_NP_S := V_S * 0;
+
+vcl_NP_T @Reaction {actors: NP_T => };
+vcl_NP_T := V_T * 0;
+
+vcl_NP_K @Reaction {actors: NP_K => };
+vcl_NP_K := V_K * 0;
+
+vcl_NP_U @Reaction {actors: NP_U => };
+vcl_NP_U := V_U * 0;
+
+vcl_NP_R @Reaction {actors: NP_R => };
+vcl_NP_R := V_R * 0;
+
+vcl_NP_B @Reaction {actors: NP_B => };
+vcl_NP_B := V_B * 0;
+
+vrel_L @Reaction {actors: => D_L};
+vrel_L := V_L * NP_L*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_S @Reaction {actors: => D_S};
+vrel_S := V_S * NP_S*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_T @Reaction {actors: => D_T};
+vrel_T := V_T * NP_T*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_K @Reaction {actors: => D_K};
+vrel_K := V_K * NP_K*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_U @Reaction {actors: => D_U};
+vrel_U := V_U * NP_U*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_R @Reaction {actors: => D_R};
+vrel_R := V_R * NP_R*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_B @Reaction {actors: => D_B};
+vrel_B := V_B * NP_B*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vdist_D_L @Reaction {actors: D_B <=> D_L};
+vdist_D_L := (Q_L-Q_S) * (D_B) - Q_L * (D_L/Kp_L_D*(hemato*Kp_BC_D+1-hemato));
+
+vdist_D_S @Reaction {actors: D_B => D_S};
+vdist_D_S := Q_S * (D_B); //  XXX: check it
+
+vdist_D_SL @Reaction {actors: D_S => D_L};
+vdist_D_SL := Q_S * (D_S/Kp_S_D*(hemato*Kp_BC_D+1-hemato));
+
+vdist_D_T @Reaction {actors: D_B <=> D_T};
+vdist_D_T := Q_T * (D_B-D_T/Kp_T_D*(hemato*Kp_BC_D+1-hemato));
+
+vdist_D_K @Reaction {actors: D_B <=> D_K};
+vdist_D_K := Q_K * (D_B-D_K/Kp_K_D*(hemato*Kp_BC_D+1-hemato));
+
+vdist_D_U @Reaction {actors: D_B <=> D_U};
+vdist_D_U := Q_U * (D_B-D_U/Kp_U_D*(hemato*Kp_BC_D+1-hemato));
+
+vdist_D_R @Reaction {actors: D_B <=> D_R};
+vdist_D_R := Q_R * (D_B-D_R/Kp_R_D*(hemato*Kp_BC_D+1-hemato));
+
+vcl_D_L @Reaction {actors: D_L => };
+vcl_D_L := V_L * (kel_L_D*D_L);
+
+vcl_D_S @Reaction {actors: D_S => };
+vcl_D_S := V_S * 0;
+
+vcl_D_T @Reaction {actors: D_T => };
+vcl_D_T := V_T * 0;
+
+vcl_D_K @Reaction {actors: D_K => };
+vcl_D_K := V_K * 0;
+
+vcl_D_U @Reaction {actors: D_U => };
+vcl_D_U := V_U * 0;
+
+vcl_D_R @Reaction {actors: D_R => };
+vcl_D_R := V_R * 0;
+
+vcl_D_B @Reaction {actors: D_B => };
+vcl_D_B := V_B * 0;
+
+// processes
+v_ir @Process {actors: <=> response};
+v_ir := syn_resp * D_P - deg_resp * response;
+
+// reference population
+W_animal_061 @Const 'reference mouse weight (U)' {units: g} = 20.8;
+W_T_061 @Const {units: g} = 0.366;
+w_L_061 @Const {units: 1} = 0.0538;
+w_S_061 @Const {units: 1} = 0.00601;
+w_K_061 @Const {units: 1} = 0.0142;
+w_U_061 @Const {units: 1} = 0.00679;
+w_B_061 @Const {units: 1} = 7.49e-02; // fitted
+
+PS_K_061 @Const {units: mL/h} = 9.27e-4;
+PS_L_061 @Const {units: mL/h} = 2.02e-3;
+PS_R_061 @Const {units: mL/h} = 5.79e-2;
+PS_S_061 @Const {units: mL/h} = 2.02e-3;
+PS_T_061 @Const {units: mL/h} = 1.31e-3;
+PS_U_061 @Const {units: mL/h} = 1.22e-4;
+
+// === experiment-specific constants ===
+// formulation: U16c, form_id=1, #3_205_6
+// doses: dose_D_ug_g=2.5/5.9/11.8, dose_NP_ug_g=30/70/140
+// pop: pop_id=61
+W_animal @Const 'mouse weight for U' {units: g} = 20.8; // pop dependent
+W_T @Const {units: g} = 0.366;
+w_L @Const {units: 1} = 0.0538;
+w_S @Const {units: 1} = 0.00601;
+w_K @Const {units: 1} = 0.0142;
+w_U @Const {units: 1} = 0.00679;
+w_B @Const {units: 1} = 7.49e-02; // fitted
+
+dose_NP_ug_g @Const 'Injected dose of nanoparticles' {units: ug/g} = 30; // determined experimentally, per body weight
+dose_D_ug_g @Const 'Injected dose of drug' {units: ug/g} = 2.5; // determined experimentally, per body weight
+
+// fitted based on in-vitro data for U1
+delta @Const {units: 1} = 7.50e-03;
+kdiff @Const = 5.49e-03;
+gamma @Const {units: 1} = 5.70e-01;
+
+// === animal-specific constants ===
+// animal: mouse, animal_id=1
+Q_L @Const {units: mL/h} = 181.92;
+Q_S @Const {units: mL/h} = 14.88;
+Q_K @Const {units: mL/h} = 124.6;
+Q_U @Const {units: mL/h} = 678;
+Q_R @Const {units: mL/h} = 371.48;
+
+Q_T_g @Const {units: mL/h/g} = 2.06; // fitted on VCR
+kel_L_D @Const {units: 1/h} = 4.75; // fitted on VCR
+
+bto_K @Const {units: 1} = 8.58e-2; // fitted on U16c/p
+bto_L @Const {units: 1} = 1.41e-1;
+bto_S @Const {units: 1} = 1.53e-1;
+bto_T @Const {units: 1} = 9.96e-3;
+bto_U @Const {units: 1} = 2.23e-1;
+
+// constants
+hemato @Const 'Hematocrit' {units: 1} = 0.45; // approx for all species
+Kp_BC_NP @Const {units: 1} = 0; // fixed
+Kp_BC_D @Const {units: 1} = 3.89;
+Kp_S_D @Const {units: 1} = 64.8; // Kp_S_D=Kp_R_D
+Kp_K_D @Const {units: 1} = 55.6; // Kp_K_D=Kp_R_D
+Kp_U_D @Const {units: 1} = 76.4; // Kp_U_D=Kp_R_D
+Kp_L_D @Const {units: 1} = 42.0;
+Kp_R_D @Const {units: 1} = 55.6;
+Kp_T_D @Const {units: 1} = 63.2;
+kel_L_D_m @Const {units: 1/h} = 4.75;
+// kel_L_D_r=1.266381e+00; // for rats
+w_B_m @Const {units: 1} = 8.14e-2;
+b_PS @Const {units: 1} = 1; // fixed
+koef_resp_K @Const {units: 1} = 7.93e+1;
+koef_resp_L @Const {units: 1} = 2.09e+2;
+koef_resp_R @Const {units: 1} = 2.46e+2;
+
+Kp_L_NP @Const {units: 1} = 1e6; // fixed
+Kp_S_NP @Const {units: 1} = 1e3; // fixed
+Kp_T_NP @Const {units: 1} = 1e3; // fixed
+Kp_K_NP @Const {units: 1} = 1e3; // fixed
+Kp_U_NP @Const {units: 1} = 1e3; // fixed
+Kp_R_NP @Const {units: 1} = 1e3; // fixed
+
+syn_resp @Const {units: 1/h} = 1; // fixed
+deg_resp @Const {units: 1/h} = 2.46;
+
+timezero @Const {units: h} = 1e-12;
