@@ -12,27 +12,22 @@ This repository includes the model reproduced from the the paper and datasets fr
 
 > Shalgunov et al. _Comprehensive study of the drug delivery properties of poly(l-lactide)-poly(ethylene glycol) nanoparticles in rats and tumor-bearing mice._ __Journal of Controlled Release 261.__ DOI: [10.1016/j.jconrel.2017.06.006](http://dx.doi.org/10.1016/j.jconrel.2017.06.006)
 
+# Known restrictions
+
+- "Units inconsistency" messages for some records: `v`, `vrel` because of the Heta limitations
+
 # Authors
 
-[Evgeny Metelkin](https://github.com/metelkin) is an maintainer of the repository in [Heta language](https://hetalang.githu.io) notation.
+[Evgeny Metelkin](https://github.com/metelkin)
 
 The model and data in the study were reproduced from the published study.
 The authors of the original study are:
 
-- Vladimir Shalgunov
-- Daria Zaytseva-Zotova
-- Arkadi Zintchenko
-- Tatiana Levada
-- Yuri Shilov
-- Dmitry Andreyev
-- Dzhangar Dzhumashev
-- Evgeny Metelkin
-- Alexandra Urusova
-- Oleg Demin
-- Kevin McDonnell
-- Greg Troiano
-- Stephen Zale
-- Elmira Safarovа
+V. Shalgunov, D. Zaytseva-Zotova, A. Zintchenko,
+T. Levada, Y. Shilov, D. Andreyev,
+D. Dzhumashev, E. Metelkin, A. Urusova,
+O. Demin, K. McDonnell, G. Troiano,
+S. Zale, E. Safarovа
 
 Copyright
 (c) InSysBio 2021

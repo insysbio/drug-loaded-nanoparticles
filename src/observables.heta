@@ -1,0 +1,58 @@
+
+block @Record {output: true} begin 
+    D_all_in_NP {units: 1} := (1-delta)*v;                       // {DL} current portion of drug in NP normalized to total
+
+    NP_L_aver {units: ug/mL} := (NP_L*V_L+NP_B*W_animal/rho_avg*w_L*bto_L)/(W_animal/rho_avg*w_L);          // {ug/ml}    mean concentration of NP for organ with blood
+    NP_S_aver {units: ug/mL} := (NP_S*V_S+NP_B*W_animal/rho_avg*w_S*bto_S)/(W_animal/rho_avg*w_S);
+    NP_T_aver {units: ug/mL} := (NP_T*V_T+NP_B*W_T/rho_avg*bto_T)/(W_T/rho_avg);
+    NP_K_aver {units: ug/mL} := (NP_K*V_K+NP_B*W_animal/rho_avg*w_K*bto_K)/(W_animal/rho_avg*w_K);
+    NP_U_aver {units: ug/mL} := (NP_U*V_U+NP_B*W_animal/rho_avg*w_U*bto_U)/(W_animal/rho_avg*w_U);
+    
+    NP_L_log {units: 1} := log(NP_L_aver+ conczero);
+    NP_S_log {units: 1} := log(NP_S_aver+ conczero);
+    NP_T_log {units: 1} := log(NP_T_aver+ conczero);
+    NP_K_log {units: 1} := log(NP_K_aver+ conczero);
+    NP_U_log {units: 1} := log(NP_U_aver+ conczero);
+    NP_P_log {units: 1} := log(NP_P+ conczero);
+    
+    NP_L_cap {units: ug/mL} := (NP_B*W_animal*w_L*bto_L)/(W_animal*w_L);          // {ug/ml}  mean concentration in capilaries of organ (total organ volume)
+    NP_S_cap {units: ug/mL} := (NP_B*W_animal*w_S*bto_S)/(W_animal*w_S);
+    NP_T_cap {units: ug/mL} := (NP_B*W_T*bto_T)/(W_T);
+    NP_K_cap {units: ug/mL} := (NP_B*W_animal*w_K*bto_K)/(W_animal*w_K);
+    NP_U_cap {units: ug/mL} := (NP_B*W_animal*w_U*bto_U)/(W_animal*w_U);
+    
+    NP_L_tissue {units: ug/mL} := (NP_L*V_L)/(W_animal/rho_avg*w_L);          // {ug/ml}   mean concentration in tissue of organ (total organ volume)
+    NP_S_tissue {units: ug/mL} := (NP_S*V_S)/(W_animal/rho_avg*w_S);
+    NP_T_tissue {units: ug/mL} := (NP_T*V_T)/(W_T/rho_avg);
+    NP_K_tissue {units: ug/mL} := (NP_K*V_K)/(W_animal/rho_avg*w_K);
+    NP_U_tissue {units: ug/mL} := (NP_U*V_U)/(W_animal/rho_avg*w_U);
+    
+    D_L_free {units: ug/mL} := (D_L*V_L+D_B*W_animal/rho_avg*w_L*bto_L)/(V_L+W_animal/rho_avg*w_L*bto_L); // {ug/ml} mean concentration of free drug for organ with blood
+    D_S_free {units: ug/mL} := (D_S*V_S+D_B*W_animal/rho_avg*w_S*bto_S)/(V_S+W_animal/rho_avg*w_S*bto_S); // {ug/ml}
+    D_T_free {units: ug/mL} := (D_T*V_T+D_B*W_T/rho_avg*bto_T)/(V_T+W_T/rho_avg*bto_T); // {ug/ml}
+    D_K_free {units: ug/mL} := (D_K*V_K+D_B*W_animal/rho_avg*w_K*bto_K)/(V_K+W_animal/rho_avg*w_K*bto_K); // {ug/ml}
+    D_U_free {units: ug/mL} := (D_U*V_U+D_B*W_animal/rho_avg*w_U*bto_U)/(V_U+W_animal/rho_avg*w_U*bto_U); // {ug/ml}
+    
+    D_L_aver0 {units: ug/mL} := NP_L_aver*D_all_in_NP*dose_D_ug_g/dose_NP_ug_g;                       // {ug/ml}   mean concentration of drug in NP for organ with blood
+    D_S_aver0 {units: ug/mL} := NP_S_aver*D_all_in_NP*dose_D_ug_g/dose_NP_ug_g;
+    D_T_aver0 {units: ug/mL} := NP_T_aver*D_all_in_NP*dose_D_ug_g/dose_NP_ug_g;
+    D_K_aver0 {units: ug/mL} := NP_K_aver*D_all_in_NP*dose_D_ug_g/dose_NP_ug_g;
+    D_U_aver0 {units: ug/mL} := NP_U_aver*D_all_in_NP*dose_D_ug_g/dose_NP_ug_g;
+    D_P_aver0 {units: ug/mL} := NP_P*D_all_in_NP*dose_D_ug_g/dose_NP_ug_g;
+    
+    D_L_aver {units: ug/mL} := D_L_aver0+D_L_free;                                                     // {ug/ml}  mean concentration of total drug for organ with blood
+    D_S_aver {units: ug/mL} := D_S_aver0+D_S_free;
+    D_T_aver {units: ug/mL} := D_T_aver0+D_T_free;
+    D_K_aver {units: ug/mL} := D_K_aver0+D_K_free;
+    D_U_aver {units: ug/mL} := D_U_aver0+D_U_free;
+    D_P_aver {units: ug/mL} := D_P_aver0+D_P;
+    
+    D_L_log {units: 1} := log(D_L_aver+ conczero);
+    D_S_log {units: 1} := log(D_S_aver+ conczero);
+    D_T_log {units: 1} := log(D_T_aver+ conczero);
+    D_K_log {units: 1} := log(D_K_aver+ conczero);
+    D_U_log {units: 1} := log(D_U_aver+ conczero);
+    D_P_log {units: 1} := log(D_P_aver+ conczero);
+    
+    D_P_log_free {units: 1} := log(D_P+ conczero);
+end
