@@ -14,6 +14,16 @@ This repository includes the model reproduced from the the paper and datasets fr
 
 - "Units inconsistency" messages for some records: `v`, `vrel` because of limited support of fractional units in Heta. But this doesn't affect simulation results.
 
+# TODO
+
+[ ] GH Actions + GH pages for exporting to different formats
+[ ] experimental data vs simulation comparison in DBSolve
+[ ] share datasets 
+[ ] Annotate components
+[ ] Simulations and experimental data in HetaSimulator
+[ ] Test simulations for NoNP, U16p, T
+[ ] split Heta code into modules
+
 # Contributors
 
 [Evgeny Metelkin](https://github.com/metelkin) is the author of the Heta-based modeling code.
