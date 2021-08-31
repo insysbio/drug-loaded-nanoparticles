@@ -191,7 +191,7 @@ w_U_061 @Const {units: 1} = 0.00679;
 w_B_061 @Const {units: 1} = 7.49e-02; // fitted
 
 PS_K_061 @Const {units: mL/h} = 9.27e-4;
-PS_L_061 @Const {units: mL/h} = 2.02e-3;
+PS_L_061 @Const {units: mL/h} = 2.14e-2; // wrong value from manuscript 2.02e-3;
 PS_R_061 @Const {units: mL/h} = 5.79e-2;
 PS_S_061 @Const {units: mL/h} = 2.02e-3;
 PS_T_061 @Const {units: mL/h} = 1.31e-3;
@@ -236,23 +236,23 @@ bto_U @Const {units: 1} = 2.23e-1;
 
 // constants
 hemato @Const 'Hematocrit' {units: 1} = 0.45; // approx for all species
-Kp_BC_NP @Const {units: 1} = 0; // fixed
-Kp_BC_D @Const {units: 1} = 3.89;
-Kp_S_D @Const {units: 1} = 64.8; // Kp_S_D=Kp_R_D
-Kp_K_D @Const {units: 1} = 55.6; // Kp_K_D=Kp_R_D
-Kp_U_D @Const {units: 1} = 76.4; // Kp_U_D=Kp_R_D
+Kp_BC_D @Const {units: 1} = 3.9;
+Kp_S_D @Const {units: 1} = 64.8;
+Kp_K_D @Const {units: 1} = 55.6;
+Kp_U_D @Const {units: 1} = 76.4;
 Kp_L_D @Const {units: 1} = 42.0;
-Kp_R_D @Const {units: 1} = 55.6;
+Kp_R_D @Const {units: 1} = 55.6; // Kp_R_D = Kp_K_D
 Kp_T_D @Const {units: 1} = 63.2;
 kel_L_D_m @Const {units: 1/h} = 4.75;
-// kel_L_D_r=1.266381e+00; // for rats
+
 w_B_m @Const {units: 1} = 8.14e-2;
 b_PS @Const {units: 1} = 1; // fixed
 koef_resp_K @Const {units: 1} = 7.93e+1;
 koef_resp_L @Const {units: 1} = 2.09e+2;
 koef_resp_R @Const {units: 1} = 2.46e+2;
 
-Kp_L_NP @Const {units: 1} = 1e6; // fixed
+Kp_BC_NP @Const {units: 1} = 0; // fixed
+Kp_L_NP @Const {units: 1} = 1e3; // fixed
 Kp_S_NP @Const {units: 1} = 1e3; // fixed
 Kp_T_NP @Const {units: 1} = 1e3; // fixed
 Kp_K_NP @Const {units: 1} = 1e3; // fixed

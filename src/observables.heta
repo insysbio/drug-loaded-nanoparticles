@@ -40,6 +40,7 @@ block @Record {output: true} begin
     D_U_aver0 {units: ug/mL} := NP_U_aver*D_all_in_NP*dose_D_ug_g/dose_NP_ug_g;
     D_P_aver0 {units: ug/mL} := NP_P*D_all_in_NP*dose_D_ug_g/dose_NP_ug_g;
     
+    // main output
     D_L_aver {units: ug/mL} := D_L_aver0+D_L_free;                                                     // {ug/ml}  mean concentration of total drug for organ with blood
     D_S_aver {units: ug/mL} := D_S_aver0+D_S_free;
     D_T_aver {units: ug/mL} := D_T_aver0+D_T_free;

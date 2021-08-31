@@ -10,7 +10,7 @@ include observables.heta
 
 // exports
 #export { format: JSON, filepath: output };
-#export { format: DBSolve, filepath: dbsolve };
+//#export { format: DBSolve, filepath: dbsolve };
 #export { format: SLV, filepath: model };
 
 //#export { format: XLSX, filepath: table, omitRows: 3, splitByClass: true };

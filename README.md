@@ -6,15 +6,13 @@
 
 PBPK Modeling For Therapeutic Nanoparticles Loaded With Drug
 
-_Under development_
-
 This repository includes the model reproduced from the the paper and datasets from figures and the supplementary materials:
 
 > Shalgunov et al. _Comprehensive study of the drug delivery properties of poly(l-lactide)-poly(ethylene glycol) nanoparticles in rats and tumor-bearing mice._ 2017 __Journal of Controlled Release 261.__ DOI: [10.1016/j.jconrel.2017.06.006](http://dx.doi.org/10.1016/j.jconrel.2017.06.006)
 
 # Known restrictions
 
-- "Units inconsistency" messages for some records: `v`, `vrel` because of the Heta limitations
+- "Units inconsistency" messages for some records: `v`, `vrel` because of limited support of fractional units in Heta. But this doesn't affect simulation results.
 
 # Contributors
 
