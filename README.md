@@ -16,13 +16,13 @@ This repository includes the model reproduced from the the paper and datasets fr
 
 # TODO
 
-[ ] GH Actions + GH pages for exporting to different formats
-[ ] experimental data vs simulation comparison in DBSolve
-[ ] share datasets 
-[ ] Annotate components
-[ ] Simulations and experimental data in HetaSimulator
-[ ] Test simulations for NoNP, U16p, T
-[ ] split Heta code into modules
+- [ ] GH Actions + GH pages for exporting to different formats
+- [ ] experimental data vs simulation comparison in DBSolve
+- [ ] share datasets 
+- [ ] Annotate components
+- [ ] Simulations and experimental data in HetaSimulator
+- [ ] Test simulations for NoNP, U16p, T
+- [ ] split Heta code into modules
 
 # Contributors
 
