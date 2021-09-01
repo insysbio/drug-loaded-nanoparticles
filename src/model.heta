@@ -66,7 +66,7 @@ block @Record begin
     PS_R {units: mL/h} := PS_R_061 * pow(w_R*W_animal/w_R_061/W_animal_061, b_PS) * exp(-koef_resp_R*response);
 
     w_R {units: 1} := 1 - w_L - w_S - w_K - w_U - w_B - W_T/W_animal; // {--} weight ratio of rest of body
-    w_R_061 {units: 1} := 1 - w_L_061 - w_S_061 - w_K_061 - w_U_061 - w_B_m - W_T_061/W_animal_061;
+    w_R_061 {units: 1} := 1 - w_L_061 - w_S_061 - w_K_061 - w_U_061 - w_B_061 - W_T_061/W_animal_061;
 
     Q_T @Record {units: mL/h} := Q_T_g * W_T;              // {ml/h}
 end
@@ -188,7 +188,7 @@ w_L_061 @Const {units: 1} = 0.0538;
 w_S_061 @Const {units: 1} = 0.00601;
 w_K_061 @Const {units: 1} = 0.0142;
 w_U_061 @Const {units: 1} = 0.00679;
-w_B_061 @Const {units: 1} = 7.49e-02; // fitted
+w_B_061 @Const {units: 1} = 8.14e-02; // fitted
 
 PS_K_061 @Const {units: mL/h} = 9.27e-4;
 PS_L_061 @Const {units: mL/h} = 2.14e-2; // wrong value from manuscript 2.02e-3;
@@ -207,7 +207,7 @@ w_L @Const {units: 1} = 0.0538;
 w_S @Const {units: 1} = 0.00601;
 w_K @Const {units: 1} = 0.0142;
 w_U @Const {units: 1} = 0.00679;
-w_B @Const {units: 1} = 7.49e-02; // fitted
+w_B @Const {units: 1} = 8.14e-02; // fitted
 
 dose_NP_ug_g @Const 'Injected dose of nanoparticles' {units: ug/g} = 30; // determined experimentally, per body weight
 dose_D_ug_g @Const 'Injected dose of drug' {units: ug/g} = 2.5; // determined experimentally, per body weight
@@ -245,7 +245,6 @@ Kp_R_D @Const {units: 1} = 55.6; // Kp_R_D = Kp_K_D
 Kp_T_D @Const {units: 1} = 63.2;
 kel_L_D_m @Const {units: 1/h} = 4.75;
 
-w_B_m @Const {units: 1} = 8.14e-2;
 b_PS @Const {units: 1} = 1; // fixed
 koef_resp_K @Const {units: 1} = 7.93e+1;
 koef_resp_L @Const {units: 1} = 2.09e+2;
