@@ -7,6 +7,7 @@ include ./qsp-units.heta
 // add main model
 include model.heta type heta
 include observables.heta
+include scenario.heta
 
 // exports
 #export { format: JSON, filepath: output };

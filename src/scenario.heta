@@ -1,0 +1,56 @@
+// === compound-specific constants ===
+// fitted based on in-vitro data for U16c #3_205_6
+// doses: dose_D_ug_g=2.5/5.9/11.8, dose_NP_ug_g=30/70/140
+delta = 7.50e-03;
+kdiff = 5.49e-03;
+gamma = 0.57;
+/*
+// fitted based on in-vitro data for U16p #8_26_1
+// doses: dose_D_ug_g=2.17/5.07/10, dose_NP_ug_g=30/70/140
+delta = 4.22e-03;
+kdiff = 1.96e-03;
+gamma = -5.32e-02;
+// fitted based on in-vitro data for T #3_213_6
+// doses: dose_D_ug_g=1.98/4.62/9.24, dose_NP_ug_g=30/70/140
+delta = 2.22e-02;
+kdiff = 6.26e-02;
+gamma = 5.98e-01;
+// fixed to describe NoNP
+// doses: dose_D_ug_g=1.5/3, dose_NP_ug_g=1e-6
+delta = 1;
+kdiff = 0;
+gamma = 0;
+*/
+
+// === experiment-specific conditions ===
+dose_NP_ug_g = 30;
+dose_D_ug_g = 2.5;
+
+// === experiment-specific constants ===
+// formulation: U16c, form_id=1, #3_205_6
+// formulation: U16p, form_id=2, #8_26_1
+// pop: pop_id=61
+W_animal = 20.8;
+W_T = 0.366;
+w_L = 0.0538;
+w_S = 0.00601;
+w_K = 0.0142;
+w_U = 0.00679;
+/*
+// formulation: T, form_id=3, #3_213_6
+// pop: pop_id=67
+W_animal = 21.8; //{g} log-mean weight of mouse     [in house]
+W_T = 0.472;     //{g} weight of tumor [in house]
+w_L = 0.0572;    // {--} logit-mean weight ratio       [in house]
+w_S = 0.00520;   // {--} logit-mean weight ratio        [in house]
+w_K = 0.0135;    // {--} logit-mean weight ratio      [in house]
+w_U = 0.00622;   // {--} logit-mean weight ratio    [in house]
+// formulation: NoNP, form_id=0
+// pop: pop_id=67.1
+W_animal = 21.2; // {g} log-mean weight of mouse     [in house]
+W_T = 0.377;     // {g} weight of tumor [in house]
+w_L = 0.0569;    // {--} logit-mean weight ratio       [in house]
+w_S = 0.00517;   // {--} logit-mean weight ratio        [in house]
+w_K = 0.0129;    // {--} logit-mean weight ratio      [in house]
+w_U = 0.00622;   // {--} logit-mean weight ratio    [in house]
+*/

@@ -197,28 +197,28 @@ PS_S_061 @Const {units: mL/h} = 2.02e-3;
 PS_T_061 @Const {units: mL/h} = 1.31e-3;
 PS_U_061 @Const {units: mL/h} = 1.22e-4;
 
+// === compound-specific constants ===
+// fitted based on in-vitro data
+delta @Const {units: 1};
+kdiff @Const {units: kdiffUnits};
+gamma @Const {units: 1};
+
 // === experiment-specific constants ===
-// formulation: U16c, form_id=1, #3_205_6
-// doses: dose_D_ug_g=2.5/5.9/11.8, dose_NP_ug_g=30/70/140
-// pop: pop_id=61
-W_animal @Const 'mouse weight for U' {units: g} = 20.8; // pop dependent
-W_T @Const {units: g} = 0.366;
-w_L @Const {units: 1} = 0.0538;
-w_S @Const {units: 1} = 0.00601;
-w_K @Const {units: 1} = 0.0142;
-w_U @Const {units: 1} = 0.00679;
-w_B @Const {units: 1} = 8.14e-02; // fitted
+ // population dependent
+W_animal @Const 'mouse weight for U' {units: g};
+W_T @Const {units: g};
+w_L @Const {units: 1};
+w_S @Const {units: 1};
+w_K @Const {units: 1};
+w_U @Const {units: 1};
 
-dose_NP_ug_g @Const 'Injected dose of nanoparticles' {units: ug/g} = 30; // determined experimentally, per body weight
-dose_D_ug_g @Const 'Injected dose of drug' {units: ug/g} = 2.5; // determined experimentally, per body weight
-
-// fitted based on in-vitro data for U1
-delta @Const {units: 1} = 7.50e-03;
-kdiff @Const {units: kdiffUnits} = 5.49e-03;
-gamma @Const {units: 1} = 0.57;
+// === experiment-specific conditions ===
+dose_NP_ug_g @Const 'Injected dose of nanoparticles' {units: ug/g}; // per body weight
+dose_D_ug_g @Const 'Injected dose of drug' {units: ug/g}; // per body weight
 
 // === animal-specific constants ===
 // animal: mouse, animal_id=1
+w_B @Const {units: 1} = 8.14e-02; // fitted
 Q_L @Const {units: mL/h} = 181.92;
 Q_S @Const {units: mL/h} = 14.88;
 Q_K @Const {units: mL/h} = 124.6;
@@ -262,5 +262,4 @@ syn_resp @Const {units: mL/ug/h} = 1; // fixed
 deg_resp @Const {units: 1/h} = 2.46;
 
 timezero @Const {units: h} = 1e-12;
-conczero @Const {units: ug/mL} =1e-9;
 zero_rate @Const 'To fit the units checking' {units: ug/h} = 0;

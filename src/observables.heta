@@ -1,3 +1,4 @@
+conczero @Const {units: ug/mL} = 1e-9;
 
 block @Record {output: true} begin 
     D_all_in_NP {units: 1} := (1-delta)*v;                       // {DL} current portion of drug in NP normalized to total
