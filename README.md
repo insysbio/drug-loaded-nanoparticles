@@ -23,7 +23,7 @@ Simulated vs measured dependence of average VCR concentration for the NP of type
 
 You find other diagnostic plots in the directory [/diagnostics/reproduced model/](https://github.com/insysbio/drug-loaded-nanoparticles/tree/main/diagnostics/reproduced%20model)
 
-## Exported format
+## Exported formats
 
 See [dist branch](https://github.com/insysbio/drug-loaded-nanoparticles/tree/dist)
 
@@ -34,8 +34,8 @@ See [dist branch](https://github.com/insysbio/drug-loaded-nanoparticles/tree/dis
 - [x] split Heta code into modules
 - [x] Annotate components
 - [x] GH Actions for exporting to different formats
-- [ ] Release version 0.1.0
-- [ ] share datasets
+- [x] Release version 0.1.0
+- [ ] Share the datasets
 - [ ] Simulations and experimental data in HetaSimulator
 
 ## Contributors
