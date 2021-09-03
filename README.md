@@ -10,22 +10,34 @@ This repository includes the model reproduced from the the paper and datasets fr
 
 > Shalgunov et al. _Comprehensive study of the drug delivery properties of poly(l-lactide)-poly(ethylene glycol) nanoparticles in rats and tumor-bearing mice._ 2017 __Journal of Controlled Release 261.__ DOI: [10.1016/j.jconrel.2017.06.006](http://dx.doi.org/10.1016/j.jconrel.2017.06.006)
 
-# Known restrictions
+## Known restrictions
 
 - "Units inconsistency" messages for some records: `v`, `vrel` because of limited support of fractional units in Heta. But this doesn't affect simulation results.
 
-# TODO
+## Diagnostics
+
+Simulated vs measured dependence of average VCR concentration for the NP of type U16c.
+
+![U16c D_L_log](diagnostics/reproduced%20model/U16c%20D_L_log.png)
+
+You find other diagnostic plots in the directory __/diagnostics/reproduced model/__
+
+## Exported format
+
+See [dist branch](https://github.com/insysbio/drug-loaded-nanoparticles/tree/dist)
+
+## TODO
 
 - [x] experimental data vs simulation comparison in DBSolve
 - [x] Test simulations for NoNP, U16p, T
-- [ ] split Heta code into modules
+- [x] split Heta code into modules
 - [x] Annotate components
 - [ ] GH Actions + GH pages for exporting to different formats
 - [ ] Release version 0.1.0
 - [ ] share datasets
 - [ ] Simulations and experimental data in HetaSimulator
 
-# Contributors
+## Contributors
 
 [Evgeny Metelkin](https://github.com/metelkin) is the author of the Heta-based modeling code.
 
