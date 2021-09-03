@@ -1,5 +1,6 @@
 t {units: h};
-rho_avg @Record 'average tissues density' {units: g/mL} := 1;
+'''average tissues density'''
+rho_avg @Record {units: g/mL} := 1;
 kdiffUnits #defineUnit {
     units: [{kind: h, exponent: -0.43}]
 }; 
@@ -41,6 +42,7 @@ end
 response @Record {units: 1} .= 0;
 
 // doses
+'''Switcher describing single dose at 0 time.'''
 single_dose_sw @TimeSwitcher { start: 0 };
 dose_NP_ug @Record {units: ug/mL} := dose_NP_ug_g * W_animal/V_B;        // {ug}
 dose_D_ug @Record {units: ug/mL} := delta * dose_D_ug_g * W_animal/V_B;  // {ug}
@@ -139,7 +141,7 @@ vdist_D_L @Reaction {actors: D_B <=> D_L, units: ug/h};
 vdist_D_L := (Q_L-Q_S) * (D_B) - Q_L * (D_L/Kp_L_D*(hemato*Kp_BC_D+1-hemato));
 
 vdist_D_S @Reaction {actors: D_B => D_S, units: ug/h};
-vdist_D_S := Q_S * (D_B); //  XXX: check it
+vdist_D_S := Q_S * (D_B);
 
 vdist_D_SL @Reaction {actors: D_S => D_L, units: ug/h};
 vdist_D_SL := Q_S * (D_S/Kp_S_D*(hemato*Kp_BC_D+1-hemato));
@@ -182,84 +184,141 @@ v_ir @Process {actors: <=> response, units: 1/h};
 v_ir := syn_resp * D_P - deg_resp * response;
 
 // reference population
+'''Animal weight'''
 W_animal_061 @Const 'reference mouse weight (U)' {units: g} = 20.8;
+'''Tumor weight (reference value)'''
 W_T_061 @Const {units: g} = 0.366;
+'''Liver to whole animal weight ratio (reference value)'''
 w_L_061 @Const {units: 1} = 0.0538;
+'''Spleen to whole animal weight ratio (reference value)'''
 w_S_061 @Const {units: 1} = 0.00601;
+'''Kidney to whole animal weight ratio (reference value)'''
 w_K_061 @Const {units: 1} = 0.0142;
+'''Lungs to whole animal weight ratio (reference value)'''
 w_U_061 @Const {units: 1} = 0.00679;
+'''Blood to whole animal weight ratio'''
 w_B_061 @Const {units: 1} = 8.14e-02; // fitted
 
+'''Diffusion coefficient for kidney'''
 PS_K_061 @Const {units: mL/h} = 9.27e-4;
-PS_L_061 @Const {units: mL/h} = 2.14e-2; // wrong value from manuscript 2.02e-3;
+'''Diffusion coefficient for liver'''
+PS_L_061 @Const {units: mL/h} = 2.14e-2; // it was a wrong value from manuscript 2.02e-3;
+'''Diffusion coefficient for rest of body'''
 PS_R_061 @Const {units: mL/h} = 5.79e-2;
+'''Diffusion coefficient for spleen'''
 PS_S_061 @Const {units: mL/h} = 2.02e-3;
+'''Diffusion coefficient for tumor'''
 PS_T_061 @Const {units: mL/h} = 1.31e-3;
+'''Diffusion coefficient for lungs'''
 PS_U_061 @Const {units: mL/h} = 1.22e-4;
 
 // === compound-specific constants ===
 // fitted based on in-vitro data
+'''"Burst" coefficient for release'''
 delta @Const {units: 1};
+'''Diffusion coefficient for release'''
 kdiff @Const {units: kdiffUnits};
+'''Concentration-time coefficient for release'''
 gamma @Const {units: 1};
 
 // === experiment-specific constants ===
- // population dependent
+// population dependent
+'''Animal weight'''
 W_animal @Const 'mouse weight for U' {units: g};
+'''Tumor weight'''
 W_T @Const {units: g};
+'''Liver to whole animal weight ratio'''
 w_L @Const {units: 1};
+'''Spleen to whole animal weight ratio'''
 w_S @Const {units: 1};
+'''Kidney to whole animal weight ratio'''
 w_K @Const {units: 1};
+'''Lungs to whole animal weight ratio'''
 w_U @Const {units: 1};
 
 // === experiment-specific conditions ===
-dose_NP_ug_g @Const 'Injected dose of nanoparticles' {units: ug/g}; // per body weight
-dose_D_ug_g @Const 'Injected dose of drug' {units: ug/g}; // per body weight
+'''selected based on experimental conditions, per body weight'''
+dose_NP_ug_g @Const 'Injected dose of nanoparticles' {units: ug/g};
+'''selected based on experimental conditions, per body weight'''
+dose_D_ug_g @Const 'Injected dose of drug' {units: ug/g};
 
 // === animal-specific constants ===
 // animal: mouse, animal_id=1
 w_B @Const {units: 1} = 8.14e-02; // fitted
+'''Blood flux through liver'''
 Q_L @Const {units: mL/h} = 181.92;
+'''Blood flux through spleen'''
 Q_S @Const {units: mL/h} = 14.88;
+'''Blood flux through kidney'''
 Q_K @Const {units: mL/h} = 124.6;
+'''Blood flux through lungs'''
 Q_U @Const {units: mL/h} = 678;
+'''Blood flux through rest of body'''
 Q_R @Const {units: mL/h} = 371.48;
 
+'''Blood flux through tumor per gram of tumor'''
 Q_T_g @Const {units: mL/h/g} = 2.06; // fitted on VCR
+'''Coefficient of drug elimination in liver'''
 kel_L_D @Const {units: 1/h} = 4.75; // fitted on VCR
 
+'''Blood in organ to whole kidneys volume ratio'''
 bto_K @Const {units: 1} = 8.58e-2; // fitted on U16c/p
+'''Blood in organ to whole liver volume ratio'''
 bto_L @Const {units: 1} = 1.41e-1;
+'''Blood in organ to whole spleen volume ratio'''
 bto_S @Const {units: 1} = 1.53e-1;
+'''Blood in organ to whole tumor volume ratio'''
 bto_T @Const {units: 1} = 9.96e-3;
+'''Blood in organ to whole lungs volume ratio'''
 bto_U @Const {units: 1} = 2.23e-1;
 
 // constants
 hemato @Const 'Hematocrit' {units: 1} = 0.45; // approx for all species
+'''Equilibrium partition coefficient (blood cells vs plasma) for drug, drug-type dependent.'''
 Kp_BC_D @Const {units: 1} = 3.9;
+'''Partition coefficient for drug in spleen'''
 Kp_S_D @Const {units: 1} = 64.8;
+'''Partition coefficient for drug in kidneys'''
 Kp_K_D @Const {units: 1} = 55.6;
+'''Partition coefficient for drug in lungs'''
 Kp_U_D @Const {units: 1} = 76.4;
+'''Partition coefficient for drug in liver'''
 Kp_L_D @Const {units: 1} = 42.0;
+'''Partition coefficient for drug in rest of body'''
 Kp_R_D @Const {units: 1} = 55.6; // Kp_R_D = Kp_K_D
+'''Partition coefficient for drug in tumor'''
 Kp_T_D @Const {units: 1} = 63.2;
-kel_L_D_m @Const {units: 1/h} = 4.75;
 
+'''Scaling factor for PS parameters'''
 b_PS @Const {units: 1} = 1; // fixed
+'''Coefficient describing responce action on kidneys'''
 koef_resp_K @Const {units: 1} = 7.93e+1;
+'''Coefficient describing responce action on liver'''
 koef_resp_L @Const {units: 1} = 2.09e+2;
+'''Coefficient describing responce action on rest of body'''
 koef_resp_R @Const {units: 1} = 2.46e+2;
 
+'''Equilibrium partition coefficient (blood cells vs plasma) for nanoparticles, fixed.'''
 Kp_BC_NP @Const {units: 1} = 0; // fixed
+'''Partition coefficient for nanoparticles in liver'''
 Kp_L_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in spleen'''
 Kp_S_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in tumor'''
 Kp_T_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in kidneys'''
 Kp_K_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in lungs'''
 Kp_U_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in rest of body'''
 Kp_R_NP @Const {units: 1} = 1e3; // fixed
 
+'''"Synthesis" of indirect response coefficient'''
 syn_resp @Const {units: mL/ug/h} = 1; // fixed
+'''"Degradation" of indirect response coefficient'''
 deg_resp @Const {units: 1/h} = 2.46;
 
+'''Minimal time value to use expressions like pow(t + timezero, -gamma, see "vrel".'''
 timezero @Const {units: h} = 1e-12;
+'''Constant equal to zero to pass units checking for reactions.'''
 zero_rate @Const 'To fit the units checking' {units: ug/h} = 0;

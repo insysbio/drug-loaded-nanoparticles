@@ -19,7 +19,7 @@ This repository includes the model reproduced from the the paper and datasets fr
 - [x] experimental data vs simulation comparison in DBSolve
 - [x] Test simulations for NoNP, U16p, T
 - [ ] split Heta code into modules
-- [ ] Annotate components
+- [x] Annotate components
 - [ ] GH Actions + GH pages for exporting to different formats
 - [ ] Release version 0.1.0
 - [ ] share datasets

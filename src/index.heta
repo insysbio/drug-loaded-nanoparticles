@@ -11,11 +11,11 @@ include scenario.heta
 
 // exports
 #export { format: JSON, filepath: output };
-//#export { format: DBSolve, filepath: dbsolve };
 #export { format: SLV, filepath: model };
+//#export { format: DBSolve, filepath: dbsolve };
+#export { format: SBML, filepath: sbml, version: L2V4 };
 
 //#export { format: XLSX, filepath: table, omitRows: 3, splitByClass: true };
-//#export { format: SBML, filepath: sbml, version: L2V4 };
 //#export { format: Simbio, filepath: simbio };
 //#export { format: Mrgsolve, filepath: mrgsolve };
 //#export { format: Matlab, filepath: matlab };
