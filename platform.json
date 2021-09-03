@@ -1,5 +1,5 @@
 {
-  "builderVersion": "^0.6.7",
+  "builderVersion": "^0.6.6",
   "id": "drug-loaded-nanoparticles",
   "notes": "PBPK Modeling For Therapeutic Nanoparticles Loaded With Drug",
   "version": "v0.1.0",
