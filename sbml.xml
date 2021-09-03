@@ -1,0 +1,2709 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<sbml 
+  xmlns="http://www.sbml.org/sbml/level2/version4" 
+  xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+  level="2" version="4"
+  >
+  <model
+    id="nameless" 
+    metaid="nameless"
+    >
+    
+    <listOfCompartments>
+      <compartment
+        id="V_B"
+        name="Blood volume"
+        constant="false"
+        units="_mL"
+        metaid="V_B"
+        >
+      </compartment>
+      <compartment
+        id="V_L"
+        name="Liver volume"
+        constant="false"
+        units="_mL"
+        metaid="V_L"
+        >
+      </compartment>
+      <compartment
+        id="V_S"
+        name="Spleen volume"
+        constant="false"
+        units="_mL"
+        metaid="V_S"
+        >
+      </compartment>
+      <compartment
+        id="V_T"
+        name="Tumor colume"
+        constant="false"
+        units="_mL"
+        metaid="V_T"
+        >
+      </compartment>
+      <compartment
+        id="V_K"
+        name="Kidneys volume"
+        constant="false"
+        units="_mL"
+        metaid="V_K"
+        >
+      </compartment>
+      <compartment
+        id="V_U"
+        name="Lungs volume"
+        constant="false"
+        units="_mL"
+        metaid="V_U"
+        >
+      </compartment>
+      <compartment
+        id="V_R"
+        name="Rest of body (ROB) volume"
+        constant="false"
+        units="_mL"
+        metaid="V_R"
+        >
+      </compartment>
+      <compartment
+        id="V_P"
+        name="Volume of blood plasma"
+        constant="false"
+        units="_mL"
+        metaid="V_P"
+        >
+      </compartment>
+    </listOfCompartments>
+  
+    <listOfSpecies>
+      <species
+        id="D_B"
+        name="Free drug in blood"
+        compartment="V_B"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="D_B"
+        >
+      </species>
+      <species
+        id="D_L"
+        name="Free drug in liver"
+        compartment="V_L"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="D_L"
+        >
+      </species>
+      <species
+        id="D_S"
+        name="Free drug in spleen"
+        compartment="V_S"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="D_S"
+        >
+      </species>
+      <species
+        id="D_T"
+        name="Free drug in tumor"
+        compartment="V_T"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="D_T"
+        >
+      </species>
+      <species
+        id="D_K"
+        name="Free drug in kidneys"
+        compartment="V_K"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="D_K"
+        >
+      </species>
+      <species
+        id="D_U"
+        name="Free drug in lungs"
+        compartment="V_U"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="D_U"
+        >
+      </species>
+      <species
+        id="D_R"
+        name="Free drug in ROB"
+        compartment="V_R"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="D_R"
+        >
+      </species>
+      <species
+        id="NP_B"
+        name="Nanoparticles in blood"
+        compartment="V_B"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="NP_B"
+        >
+      </species>
+      <species
+        id="NP_L"
+        name="Nanoparticles in liver"
+        compartment="V_L"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="NP_L"
+        >
+      </species>
+      <species
+        id="NP_S"
+        name="Nanoparticles in spleen"
+        compartment="V_S"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="NP_S"
+        >
+      </species>
+      <species
+        id="NP_T"
+        name="Nanoparticles in tumor"
+        compartment="V_T"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="NP_T"
+        >
+      </species>
+      <species
+        id="NP_K"
+        name="Nanoparticles in kidneys"
+        compartment="V_K"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="NP_K"
+        >
+      </species>
+      <species
+        id="NP_U"
+        name="Nanoparticles in lungs"
+        compartment="V_U"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="NP_U"
+        >
+      </species>
+      <species
+        id="NP_R"
+        name="Nanoparticles in ROB"
+        compartment="V_R"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="_ug"
+        metaid="NP_R"
+        >
+      </species>
+    </listOfSpecies>
+  
+    <listOfParameters>
+      <parameter
+        id="rho_avg"
+        constant="false"
+        units="__mL_g"
+        metaid="rho_avg"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>average tissues density</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="response"
+        constant="false"
+        value="0"
+        units="_dimensionless"
+        metaid="response"
+        >
+      </parameter>
+      <parameter
+        id="dose_D_ug"
+        constant="false"
+        units="_ug__mL"
+        metaid="dose_D_ug"
+        >
+      </parameter>
+      <parameter
+        id="D_P"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_P"
+        >
+      </parameter>
+      <parameter
+        id="PS_L"
+        constant="false"
+        units="_mL__h"
+        metaid="PS_L"
+        >
+      </parameter>
+      <parameter
+        id="PS_S"
+        constant="false"
+        units="_mL__h"
+        metaid="PS_S"
+        >
+      </parameter>
+      <parameter
+        id="PS_T"
+        constant="false"
+        units="_mL__h"
+        metaid="PS_T"
+        >
+      </parameter>
+      <parameter
+        id="PS_K"
+        constant="false"
+        units="_mL__h"
+        metaid="PS_K"
+        >
+      </parameter>
+      <parameter
+        id="PS_U"
+        constant="false"
+        units="_mL__h"
+        metaid="PS_U"
+        >
+      </parameter>
+      <parameter
+        id="PS_R"
+        constant="false"
+        units="_mL__h"
+        metaid="PS_R"
+        >
+      </parameter>
+      <parameter
+        id="w_R"
+        constant="false"
+        units="_dimensionless"
+        metaid="w_R"
+        >
+      </parameter>
+      <parameter
+        id="w_R_061"
+        constant="false"
+        units="_dimensionless"
+        metaid="w_R_061"
+        >
+      </parameter>
+      <parameter
+        id="Q_T"
+        constant="false"
+        units="_mL__h"
+        metaid="Q_T"
+        >
+      </parameter>
+      <parameter
+        id="dose_NP_ug"
+        constant="false"
+        units="_ug__mL"
+        metaid="dose_NP_ug"
+        >
+      </parameter>
+      <parameter
+        id="NP_P"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_P"
+        >
+      </parameter>
+      <parameter
+        id="v"
+        constant="false"
+        units="_dimensionless"
+        metaid="v"
+        >
+      </parameter>
+      <parameter
+        id="vrel"
+        constant="false"
+        units="__h"
+        metaid="vrel"
+        >
+      </parameter>
+      <parameter
+        id="D_all_in_NP"
+        constant="false"
+        units="_dimensionless"
+        metaid="D_all_in_NP"
+        >
+      </parameter>
+      <parameter
+        id="NP_L_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_L_aver"
+        >
+      </parameter>
+      <parameter
+        id="NP_S_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_S_aver"
+        >
+      </parameter>
+      <parameter
+        id="NP_T_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_T_aver"
+        >
+      </parameter>
+      <parameter
+        id="NP_K_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_K_aver"
+        >
+      </parameter>
+      <parameter
+        id="NP_U_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_U_aver"
+        >
+      </parameter>
+      <parameter
+        id="NP_L_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="NP_L_log"
+        >
+      </parameter>
+      <parameter
+        id="NP_S_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="NP_S_log"
+        >
+      </parameter>
+      <parameter
+        id="NP_T_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="NP_T_log"
+        >
+      </parameter>
+      <parameter
+        id="NP_K_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="NP_K_log"
+        >
+      </parameter>
+      <parameter
+        id="NP_U_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="NP_U_log"
+        >
+      </parameter>
+      <parameter
+        id="NP_P_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="NP_P_log"
+        >
+      </parameter>
+      <parameter
+        id="NP_L_cap"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_L_cap"
+        >
+      </parameter>
+      <parameter
+        id="NP_S_cap"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_S_cap"
+        >
+      </parameter>
+      <parameter
+        id="NP_T_cap"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_T_cap"
+        >
+      </parameter>
+      <parameter
+        id="NP_K_cap"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_K_cap"
+        >
+      </parameter>
+      <parameter
+        id="NP_U_cap"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_U_cap"
+        >
+      </parameter>
+      <parameter
+        id="NP_L_tissue"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_L_tissue"
+        >
+      </parameter>
+      <parameter
+        id="NP_S_tissue"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_S_tissue"
+        >
+      </parameter>
+      <parameter
+        id="NP_T_tissue"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_T_tissue"
+        >
+      </parameter>
+      <parameter
+        id="NP_K_tissue"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_K_tissue"
+        >
+      </parameter>
+      <parameter
+        id="NP_U_tissue"
+        constant="false"
+        units="_ug__mL"
+        metaid="NP_U_tissue"
+        >
+      </parameter>
+      <parameter
+        id="D_L_free"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_L_free"
+        >
+      </parameter>
+      <parameter
+        id="D_S_free"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_S_free"
+        >
+      </parameter>
+      <parameter
+        id="D_T_free"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_T_free"
+        >
+      </parameter>
+      <parameter
+        id="D_K_free"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_K_free"
+        >
+      </parameter>
+      <parameter
+        id="D_U_free"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_U_free"
+        >
+      </parameter>
+      <parameter
+        id="D_L_aver0"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_L_aver0"
+        >
+      </parameter>
+      <parameter
+        id="D_S_aver0"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_S_aver0"
+        >
+      </parameter>
+      <parameter
+        id="D_T_aver0"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_T_aver0"
+        >
+      </parameter>
+      <parameter
+        id="D_K_aver0"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_K_aver0"
+        >
+      </parameter>
+      <parameter
+        id="D_U_aver0"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_U_aver0"
+        >
+      </parameter>
+      <parameter
+        id="D_P_aver0"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_P_aver0"
+        >
+      </parameter>
+      <parameter
+        id="D_L_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_L_aver"
+        >
+      </parameter>
+      <parameter
+        id="D_S_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_S_aver"
+        >
+      </parameter>
+      <parameter
+        id="D_T_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_T_aver"
+        >
+      </parameter>
+      <parameter
+        id="D_K_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_K_aver"
+        >
+      </parameter>
+      <parameter
+        id="D_U_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_U_aver"
+        >
+      </parameter>
+      <parameter
+        id="D_P_aver"
+        constant="false"
+        units="_ug__mL"
+        metaid="D_P_aver"
+        >
+      </parameter>
+      <parameter
+        id="D_L_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="D_L_log"
+        >
+      </parameter>
+      <parameter
+        id="D_S_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="D_S_log"
+        >
+      </parameter>
+      <parameter
+        id="D_T_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="D_T_log"
+        >
+      </parameter>
+      <parameter
+        id="D_K_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="D_K_log"
+        >
+      </parameter>
+      <parameter
+        id="D_U_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="D_U_log"
+        >
+      </parameter>
+      <parameter
+        id="D_P_log"
+        constant="false"
+        units="_dimensionless"
+        metaid="D_P_log"
+        >
+      </parameter>
+      <parameter
+        id="D_P_log_free"
+        constant="false"
+        units="_dimensionless"
+        metaid="D_P_log_free"
+        >
+      </parameter>
+      <parameter
+        id="v_ir"
+        constant="false"
+        units="__h"
+        metaid="v_ir"
+        >
+      </parameter>
+      <parameter
+        id="W_animal_061"
+        constant="true"
+        value="20.8"
+        units="_g"
+        metaid="W_animal_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Animal weight</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="W_T_061"
+        constant="true"
+        value="0.366"
+        units="_g"
+        metaid="W_T_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Tumor weight (reference value)</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_L_061"
+        constant="true"
+        value="0.0538"
+        units="_dimensionless"
+        metaid="w_L_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Liver to whole animal weight ratio (reference value)</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_S_061"
+        constant="true"
+        value="0.00601"
+        units="_dimensionless"
+        metaid="w_S_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Spleen to whole animal weight ratio (reference value)</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_K_061"
+        constant="true"
+        value="0.0142"
+        units="_dimensionless"
+        metaid="w_K_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Kidney to whole animal weight ratio (reference value)</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_U_061"
+        constant="true"
+        value="0.00679"
+        units="_dimensionless"
+        metaid="w_U_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Lungs to whole animal weight ratio (reference value)</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_B_061"
+        constant="true"
+        value="0.0814"
+        units="_dimensionless"
+        metaid="w_B_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood to whole animal weight ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="delta"
+        constant="true"
+        value="0.0075"
+        units="_dimensionless"
+        metaid="delta"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>&quot;Burst&quot; coefficient for release</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="kdiff"
+        constant="true"
+        value="0.00549"
+        units="_kdiffUnits"
+        metaid="kdiff"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Diffusion coefficient for release</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="gamma"
+        constant="true"
+        value="0.57"
+        units="_dimensionless"
+        metaid="gamma"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Concentration-time coefficient for release</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="W_animal"
+        constant="true"
+        value="20.8"
+        units="_g"
+        metaid="W_animal"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Animal weight</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="W_T"
+        constant="true"
+        value="0.366"
+        units="_g"
+        metaid="W_T"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Tumor weight</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_L"
+        constant="true"
+        value="0.0538"
+        units="_dimensionless"
+        metaid="w_L"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Liver to whole animal weight ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_S"
+        constant="true"
+        value="0.00601"
+        units="_dimensionless"
+        metaid="w_S"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Spleen to whole animal weight ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_K"
+        constant="true"
+        value="0.0142"
+        units="_dimensionless"
+        metaid="w_K"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Kidney to whole animal weight ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_U"
+        constant="true"
+        value="0.00679"
+        units="_dimensionless"
+        metaid="w_U"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Lungs to whole animal weight ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="PS_K_061"
+        constant="true"
+        value="0.000927"
+        units="_mL__h"
+        metaid="PS_K_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Diffusion coefficient for kidney</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="PS_L_061"
+        constant="true"
+        value="0.0214"
+        units="_mL__h"
+        metaid="PS_L_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Diffusion coefficient for liver</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="PS_R_061"
+        constant="true"
+        value="0.0579"
+        units="_mL__h"
+        metaid="PS_R_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Diffusion coefficient for rest of body</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="PS_S_061"
+        constant="true"
+        value="0.00202"
+        units="_mL__h"
+        metaid="PS_S_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Diffusion coefficient for spleen</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="PS_T_061"
+        constant="true"
+        value="0.00131"
+        units="_mL__h"
+        metaid="PS_T_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Diffusion coefficient for tumor</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="PS_U_061"
+        constant="true"
+        value="0.000122"
+        units="_mL__h"
+        metaid="PS_U_061"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Diffusion coefficient for lungs</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="dose_D_ug_g"
+        constant="true"
+        value="2.5"
+        units="_ug__g"
+        metaid="dose_D_ug_g"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>selected based on experimental conditions, per body weight</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="w_B"
+        constant="true"
+        value="0.0814"
+        units="_dimensionless"
+        metaid="w_B"
+        >
+      </parameter>
+      <parameter
+        id="Q_L"
+        constant="true"
+        value="181.92"
+        units="_mL__h"
+        metaid="Q_L"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood flux through liver</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Q_S"
+        constant="true"
+        value="14.88"
+        units="_mL__h"
+        metaid="Q_S"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood flux through spleen</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Q_K"
+        constant="true"
+        value="124.6"
+        units="_mL__h"
+        metaid="Q_K"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood flux through kidney</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Q_U"
+        constant="true"
+        value="678"
+        units="_mL__h"
+        metaid="Q_U"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood flux through lungs</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Q_R"
+        constant="true"
+        value="371.48"
+        units="_mL__h"
+        metaid="Q_R"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood flux through rest of body</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Q_T_g"
+        constant="true"
+        value="2.06"
+        units="_mL__h__g"
+        metaid="Q_T_g"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood flux through tumor per gram of tumor</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="kel_L_D"
+        constant="true"
+        value="4.75"
+        units="__h"
+        metaid="kel_L_D"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Coefficient of drug elimination in liver</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="bto_K"
+        constant="true"
+        value="0.0858"
+        units="_dimensionless"
+        metaid="bto_K"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood in organ to whole kidneys volume ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="bto_L"
+        constant="true"
+        value="0.141"
+        units="_dimensionless"
+        metaid="bto_L"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood in organ to whole liver volume ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="bto_S"
+        constant="true"
+        value="0.153"
+        units="_dimensionless"
+        metaid="bto_S"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood in organ to whole spleen volume ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="bto_T"
+        constant="true"
+        value="0.00996"
+        units="_dimensionless"
+        metaid="bto_T"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood in organ to whole tumor volume ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="bto_U"
+        constant="true"
+        value="0.223"
+        units="_dimensionless"
+        metaid="bto_U"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Blood in organ to whole lungs volume ratio</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="hemato"
+        constant="true"
+        value="0.45"
+        units="_dimensionless"
+        metaid="hemato"
+        >
+      </parameter>
+      <parameter
+        id="Kp_BC_D"
+        constant="true"
+        value="3.9"
+        units="_dimensionless"
+        metaid="Kp_BC_D"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Equilibrium partition coefficient (blood cells vs plasma) for drug, drug-type dependent.</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_S_D"
+        constant="true"
+        value="64.8"
+        units="_dimensionless"
+        metaid="Kp_S_D"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for drug in spleen</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_K_D"
+        constant="true"
+        value="55.6"
+        units="_dimensionless"
+        metaid="Kp_K_D"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for drug in kidneys</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_U_D"
+        constant="true"
+        value="76.4"
+        units="_dimensionless"
+        metaid="Kp_U_D"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for drug in lungs</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_L_D"
+        constant="true"
+        value="42"
+        units="_dimensionless"
+        metaid="Kp_L_D"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for drug in liver</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_R_D"
+        constant="true"
+        value="55.6"
+        units="_dimensionless"
+        metaid="Kp_R_D"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for drug in rest of body</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_T_D"
+        constant="true"
+        value="63.2"
+        units="_dimensionless"
+        metaid="Kp_T_D"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for drug in tumor</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="b_PS"
+        constant="true"
+        value="1"
+        units="_dimensionless"
+        metaid="b_PS"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Scaling factor for PS parameters</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="koef_resp_K"
+        constant="true"
+        value="79.3"
+        units="_dimensionless"
+        metaid="koef_resp_K"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Coefficient describing responce action on kidneys</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="koef_resp_L"
+        constant="true"
+        value="209"
+        units="_dimensionless"
+        metaid="koef_resp_L"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Coefficient describing responce action on liver</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="koef_resp_R"
+        constant="true"
+        value="246"
+        units="_dimensionless"
+        metaid="koef_resp_R"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Coefficient describing responce action on rest of body</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="syn_resp"
+        constant="true"
+        value="1"
+        units="__ug_mL__h"
+        metaid="syn_resp"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>&quot;Synthesis&quot; of indirect response coefficient</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="deg_resp"
+        constant="true"
+        value="2.46"
+        units="__h"
+        metaid="deg_resp"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>&quot;Degradation&quot; of indirect response coefficient</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="zero_rate"
+        constant="true"
+        value="0"
+        units="_ug__h"
+        metaid="zero_rate"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Constant equal to zero to pass units checking for reactions.</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="dose_NP_ug_g"
+        constant="true"
+        value="30"
+        units="_ug__g"
+        metaid="dose_NP_ug_g"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>selected based on experimental conditions, per body weight</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_BC_NP"
+        constant="true"
+        value="0"
+        units="_dimensionless"
+        metaid="Kp_BC_NP"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Equilibrium partition coefficient (blood cells vs plasma) for nanoparticles, fixed.</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_L_NP"
+        constant="true"
+        value="1000"
+        units="_dimensionless"
+        metaid="Kp_L_NP"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for nanoparticles in liver</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_S_NP"
+        constant="true"
+        value="1000"
+        units="_dimensionless"
+        metaid="Kp_S_NP"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for nanoparticles in spleen</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_T_NP"
+        constant="true"
+        value="1000"
+        units="_dimensionless"
+        metaid="Kp_T_NP"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for nanoparticles in tumor</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_K_NP"
+        constant="true"
+        value="1000"
+        units="_dimensionless"
+        metaid="Kp_K_NP"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for nanoparticles in kidneys</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_U_NP"
+        constant="true"
+        value="1000"
+        units="_dimensionless"
+        metaid="Kp_U_NP"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for nanoparticles in lungs</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="Kp_R_NP"
+        constant="true"
+        value="1000"
+        units="_dimensionless"
+        metaid="Kp_R_NP"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Partition coefficient for nanoparticles in rest of body</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="timezero"
+        constant="true"
+        value="1e-12"
+        units="_h"
+        metaid="timezero"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Minimal time value to use expressions like pow(t + timezero, -gamma, see &quot;vrel&quot;.</p>
+
+          </html>
+        </notes>
+      </parameter>
+      <parameter
+        id="conczero"
+        constant="true"
+        value="1e-9"
+        units="_ug__mL"
+        metaid="conczero"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>Constant that was included to plot in log scale only</p>
+
+          </html>
+        </notes>
+      </parameter>
+    </listOfParameters>
+  
+    <listOfReactions>
+      <reaction
+        id="vdist_D_L"
+        reversible="true"
+        fast="false"
+        metaid="vdist_D_L"
+        >
+        <listOfReactants>
+          <speciesReference species="D_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_L" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><times/><apply><minus/><ci>Q_L</ci><ci>Q_S</ci></apply><ci>D_B</ci></apply><apply><times/><ci>Q_L</ci><apply><times/><apply><divide/><ci>D_L</ci><ci>Kp_L_D</ci></apply><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_D</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_D_S"
+        reversible="false"
+        fast="false"
+        metaid="vdist_D_S"
+        >
+        <listOfReactants>
+          <speciesReference species="D_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_S" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>Q_S</ci><ci>D_B</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_D_SL"
+        reversible="false"
+        fast="false"
+        metaid="vdist_D_SL"
+        >
+        <listOfReactants>
+          <speciesReference species="D_S" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_L" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>Q_S</ci><apply><times/><apply><divide/><ci>D_S</ci><ci>Kp_S_D</ci></apply><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_D</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_D_T"
+        reversible="true"
+        fast="false"
+        metaid="vdist_D_T"
+        >
+        <listOfReactants>
+          <speciesReference species="D_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_T" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>Q_T</ci><apply><minus/><ci>D_B</ci><apply><times/><apply><divide/><ci>D_T</ci><ci>Kp_T_D</ci></apply><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_D</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_D_K"
+        reversible="true"
+        fast="false"
+        metaid="vdist_D_K"
+        >
+        <listOfReactants>
+          <speciesReference species="D_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_K" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>Q_K</ci><apply><minus/><ci>D_B</ci><apply><times/><apply><divide/><ci>D_K</ci><ci>Kp_K_D</ci></apply><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_D</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_D_U"
+        reversible="true"
+        fast="false"
+        metaid="vdist_D_U"
+        >
+        <listOfReactants>
+          <speciesReference species="D_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_U" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>Q_U</ci><apply><minus/><ci>D_B</ci><apply><times/><apply><divide/><ci>D_U</ci><ci>Kp_U_D</ci></apply><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_D</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_D_R"
+        reversible="true"
+        fast="false"
+        metaid="vdist_D_R"
+        >
+        <listOfReactants>
+          <speciesReference species="D_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_R" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>Q_R</ci><apply><minus/><ci>D_B</ci><apply><times/><apply><divide/><ci>D_R</ci><ci>Kp_R_D</ci></apply><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_D</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_D_L"
+        reversible="false"
+        fast="false"
+        metaid="vcl_D_L"
+        >
+        <listOfReactants>
+          <speciesReference species="D_L" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>V_L</ci><apply><times/><ci>kel_L_D</ci><ci>D_L</ci></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_D_S"
+        reversible="false"
+        fast="false"
+        metaid="vcl_D_S"
+        >
+        <listOfReactants>
+          <speciesReference species="D_S" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_D_T"
+        reversible="false"
+        fast="false"
+        metaid="vcl_D_T"
+        >
+        <listOfReactants>
+          <speciesReference species="D_T" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_D_K"
+        reversible="false"
+        fast="false"
+        metaid="vcl_D_K"
+        >
+        <listOfReactants>
+          <speciesReference species="D_K" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_D_U"
+        reversible="false"
+        fast="false"
+        metaid="vcl_D_U"
+        >
+        <listOfReactants>
+          <speciesReference species="D_U" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_D_R"
+        reversible="false"
+        fast="false"
+        metaid="vcl_D_R"
+        >
+        <listOfReactants>
+          <speciesReference species="D_R" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_D_B"
+        reversible="false"
+        fast="false"
+        metaid="vcl_D_B"
+        >
+        <listOfReactants>
+          <speciesReference species="D_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_NP_L"
+        reversible="true"
+        fast="false"
+        metaid="vdist_NP_L"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="NP_L" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_L</ci><apply><minus/><ci>NP_P</ci><apply><divide/><ci>NP_L</ci><ci>Kp_L_NP</ci></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_NP_S"
+        reversible="true"
+        fast="false"
+        metaid="vdist_NP_S"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="NP_S" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_S</ci><apply><minus/><ci>NP_P</ci><apply><divide/><ci>NP_S</ci><ci>Kp_S_NP</ci></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_NP_T"
+        reversible="true"
+        fast="false"
+        metaid="vdist_NP_T"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="NP_T" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_T</ci><apply><minus/><ci>NP_P</ci><apply><divide/><ci>NP_T</ci><ci>Kp_T_NP</ci></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_NP_K"
+        reversible="true"
+        fast="false"
+        metaid="vdist_NP_K"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="NP_K" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_K</ci><apply><minus/><ci>NP_P</ci><apply><divide/><ci>NP_K</ci><ci>Kp_K_NP</ci></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_NP_U"
+        reversible="true"
+        fast="false"
+        metaid="vdist_NP_U"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="NP_U" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_U</ci><apply><minus/><ci>NP_P</ci><apply><divide/><ci>NP_U</ci><ci>Kp_U_NP</ci></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vdist_NP_R"
+        reversible="true"
+        fast="false"
+        metaid="vdist_NP_R"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="NP_R" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_R</ci><apply><minus/><ci>NP_P</ci><apply><divide/><ci>NP_R</ci><ci>Kp_R_NP</ci></apply></apply></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_NP_L"
+        reversible="false"
+        fast="false"
+        metaid="vcl_NP_L"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_L" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_NP_S"
+        reversible="false"
+        fast="false"
+        metaid="vcl_NP_S"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_S" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_NP_T"
+        reversible="false"
+        fast="false"
+        metaid="vcl_NP_T"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_T" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_NP_K"
+        reversible="false"
+        fast="false"
+        metaid="vcl_NP_K"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_K" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_NP_U"
+        reversible="false"
+        fast="false"
+        metaid="vcl_NP_U"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_U" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_NP_R"
+        reversible="false"
+        fast="false"
+        metaid="vcl_NP_R"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_R" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vcl_NP_B"
+        reversible="false"
+        fast="false"
+        metaid="vcl_NP_B"
+        >
+        <listOfReactants>
+          <speciesReference species="NP_B" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>zero_rate</ci></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vrel_L"
+        reversible="false"
+        fast="false"
+        metaid="vrel_L"
+        >
+        <listOfReactants>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_L" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>V_L</ci><ci>NP_L</ci></apply><ci>vrel</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vrel_S"
+        reversible="false"
+        fast="false"
+        metaid="vrel_S"
+        >
+        <listOfReactants>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_S" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>V_S</ci><ci>NP_S</ci></apply><ci>vrel</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vrel_T"
+        reversible="false"
+        fast="false"
+        metaid="vrel_T"
+        >
+        <listOfReactants>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_T" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>V_T</ci><ci>NP_T</ci></apply><ci>vrel</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vrel_K"
+        reversible="false"
+        fast="false"
+        metaid="vrel_K"
+        >
+        <listOfReactants>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_K" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>V_K</ci><ci>NP_K</ci></apply><ci>vrel</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vrel_U"
+        reversible="false"
+        fast="false"
+        metaid="vrel_U"
+        >
+        <listOfReactants>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_U" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>V_U</ci><ci>NP_U</ci></apply><ci>vrel</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vrel_R"
+        reversible="false"
+        fast="false"
+        metaid="vrel_R"
+        >
+        <listOfReactants>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_R" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>V_R</ci><ci>NP_R</ci></apply><ci>vrel</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="vrel_B"
+        reversible="false"
+        fast="false"
+        metaid="vrel_B"
+        >
+        <listOfReactants>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_B" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>V_B</ci><ci>NP_B</ci></apply><ci>vrel</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  
+  <listOfRules>
+    <assignmentRule
+      variable="rho_avg"
+      metaid="rho_avg::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><cn>1</cn></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_B"
+      metaid="V_B::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><apply><plus/><apply><plus/><apply><plus/><apply><plus/><ci>w_B</ci><apply><times/><ci>w_L</ci><ci>bto_L</ci></apply></apply><apply><times/><ci>w_S</ci><ci>bto_S</ci></apply></apply><apply><times/><ci>w_K</ci><ci>bto_K</ci></apply></apply><apply><times/><ci>w_U</ci><ci>bto_U</ci></apply></apply></apply><apply><times/><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_L"
+      metaid="V_L::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply><apply><minus/><cn>1</cn><ci>bto_L</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_S"
+      metaid="V_S::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply><apply><minus/><cn>1</cn><ci>bto_S</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_T"
+      metaid="V_T::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply><apply><minus/><cn>1</cn><ci>bto_T</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_K"
+      metaid="V_K::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply><apply><minus/><cn>1</cn><ci>bto_K</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_U"
+      metaid="V_U::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply><apply><minus/><cn>1</cn><ci>bto_U</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_R"
+      metaid="V_R::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_R</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_P"
+      metaid="V_P::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>V_B</ci><apply><minus/><cn>1</cn><ci>hemato</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="dose_D_ug"
+      metaid="dose_D_ug::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>delta</ci><ci>dose_D_ug_g</ci></apply><ci>W_animal</ci></apply><ci>V_B</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_P"
+      metaid="D_P::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>D_B</ci><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_D</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_L"
+      metaid="PS_L::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>PS_L_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_L</ci><ci>W_animal</ci></apply><ci>w_L_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply><apply><exp/><apply><times/><apply><minus/><ci>koef_resp_L</ci></apply><ci>response</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_S"
+      metaid="PS_S::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_S_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_S</ci><ci>W_animal</ci></apply><ci>w_S_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_T"
+      metaid="PS_T::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_T_061</ci><apply><power/><apply><divide/><ci>W_T</ci><ci>W_T_061</ci></apply><ci>b_PS</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_K"
+      metaid="PS_K::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>PS_K_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_K</ci><ci>W_animal</ci></apply><ci>w_K_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply><apply><exp/><apply><times/><apply><minus/><ci>koef_resp_K</ci></apply><ci>response</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_U"
+      metaid="PS_U::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_U_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_U</ci><ci>W_animal</ci></apply><ci>w_U_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_R"
+      metaid="PS_R::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>PS_R_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_R</ci><ci>W_animal</ci></apply><ci>w_R_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply><apply><exp/><apply><times/><apply><minus/><ci>koef_resp_R</ci></apply><ci>response</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="w_R"
+      metaid="w_R::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><cn>1</cn><ci>w_L</ci></apply><ci>w_S</ci></apply><ci>w_K</ci></apply><ci>w_U</ci></apply><ci>w_B</ci></apply><apply><divide/><ci>W_T</ci><ci>W_animal</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="w_R_061"
+      metaid="w_R_061::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><cn>1</cn><ci>w_L_061</ci></apply><ci>w_S_061</ci></apply><ci>w_K_061</ci></apply><ci>w_U_061</ci></apply><ci>w_B_061</ci></apply><apply><divide/><ci>W_T_061</ci><ci>W_animal_061</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="Q_T"
+      metaid="Q_T::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>Q_T_g</ci><ci>W_T</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="v_ir"
+      metaid="v_ir::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><times/><ci>syn_resp</ci><ci>D_P</ci></apply><apply><times/><ci>deg_resp</ci><ci>response</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="dose_NP_ug"
+      metaid="dose_NP_ug::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>dose_NP_ug_g</ci><ci>W_animal</ci></apply><ci>V_B</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_P"
+      metaid="NP_P::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>NP_B</ci><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_NP</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="v"
+      metaid="v::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><exp/><apply><times/><apply><divide/><apply><minus/><ci>kdiff</ci></apply><apply><minus/><cn>1</cn><ci>gamma</ci></apply></apply><apply><power/><apply><plus/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>timezero</ci></apply><apply><minus/><cn>1</cn><ci>gamma</ci></apply></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="vrel"
+      metaid="vrel::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><times/><ci>kdiff</ci><apply><power/><apply><plus/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>timezero</ci></apply><apply><minus/><ci>gamma</ci></apply></apply></apply><ci>v</ci></apply><apply><minus/><cn>1</cn><ci>delta</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_all_in_NP"
+      metaid="D_all_in_NP::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><minus/><cn>1</cn><ci>delta</ci></apply><ci>v</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_L_aver"
+      metaid="NP_L_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_L</ci><ci>V_L</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_S_aver"
+      metaid="NP_S_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_S</ci><ci>V_S</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_T_aver"
+      metaid="NP_T_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_T</ci><ci>V_T</ci></apply><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_T</ci></apply><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_K_aver"
+      metaid="NP_K_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_K</ci><ci>V_K</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_U_aver"
+      metaid="NP_U_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_U</ci><ci>V_U</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_L_log"
+      metaid="NP_L_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_L_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_S_log"
+      metaid="NP_S_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_S_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_T_log"
+      metaid="NP_T_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_T_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_K_log"
+      metaid="NP_K_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_K_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_U_log"
+      metaid="NP_U_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_U_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_P_log"
+      metaid="NP_P_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_P</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_L_cap"
+      metaid="NP_L_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply><apply><times/><ci>W_animal</ci><ci>w_L</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_S_cap"
+      metaid="NP_S_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply><apply><times/><ci>W_animal</ci><ci>w_S</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_T_cap"
+      metaid="NP_T_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_T</ci></apply><ci>bto_T</ci></apply><ci>W_T</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_K_cap"
+      metaid="NP_K_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply><apply><times/><ci>W_animal</ci><ci>w_K</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_U_cap"
+      metaid="NP_U_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply><apply><times/><ci>W_animal</ci><ci>w_U</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_L_tissue"
+      metaid="NP_L_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_L</ci><ci>V_L</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_S_tissue"
+      metaid="NP_S_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_S</ci><ci>V_S</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_T_tissue"
+      metaid="NP_T_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_T</ci><ci>V_T</ci></apply><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_K_tissue"
+      metaid="NP_K_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_K</ci><ci>V_K</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_U_tissue"
+      metaid="NP_U_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_U</ci><ci>V_U</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_L_free"
+      metaid="D_L_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_L</ci><ci>V_L</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply></apply><apply><plus/><ci>V_L</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_S_free"
+      metaid="D_S_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_S</ci><ci>V_S</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply></apply><apply><plus/><ci>V_S</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_T_free"
+      metaid="D_T_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_T</ci><ci>V_T</ci></apply><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_T</ci></apply><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply><apply><plus/><ci>V_T</ci><apply><times/><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_K_free"
+      metaid="D_K_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_K</ci><ci>V_K</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply></apply><apply><plus/><ci>V_K</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_U_free"
+      metaid="D_U_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_U</ci><ci>V_U</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply><apply><plus/><ci>V_U</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_L_aver0"
+      metaid="D_L_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_L_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_S_aver0"
+      metaid="D_S_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_S_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_T_aver0"
+      metaid="D_T_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_T_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_K_aver0"
+      metaid="D_K_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_K_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_U_aver0"
+      metaid="D_U_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_U_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_P_aver0"
+      metaid="D_P_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_P</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_L_aver"
+      metaid="D_L_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_L_aver0</ci><ci>D_L_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_S_aver"
+      metaid="D_S_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_S_aver0</ci><ci>D_S_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_T_aver"
+      metaid="D_T_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_T_aver0</ci><ci>D_T_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_K_aver"
+      metaid="D_K_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_K_aver0</ci><ci>D_K_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_U_aver"
+      metaid="D_U_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_U_aver0</ci><ci>D_U_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_P_aver"
+      metaid="D_P_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_P_aver0</ci><ci>D_P</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_L_log"
+      metaid="D_L_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_L_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_S_log"
+      metaid="D_S_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_S_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_T_log"
+      metaid="D_T_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_T_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_K_log"
+      metaid="D_K_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_K_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_U_log"
+      metaid="D_U_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_U_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_P_log"
+      metaid="D_P_log::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_P_aver</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_P_log_free"
+      metaid="D_P_log_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_P</ci><ci>conczero</ci></apply></apply></math>
+    </assignmentRule>
+    <rateRule
+      variable="response"
+      metaid="response::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <cn>1</cn>
+            <ci>v_ir</ci>
+          </apply>
+        </apply>
+      </math>
+    </rateRule>
+  
+  
+  </listOfRules>
+  
+    <listOfEvents>}
+      <event
+        id="single_dose_sw"
+        metaid="single_dose_sw"
+        >
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply><and/>
+              <true/>
+              <apply><geq/>
+                <csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol>
+                <cn>0</cn>
+              </apply>
+              
+              }
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          
+          <eventAssignment
+            variable="D_B"
+            metaid="D_B::single_dose_sw">
+            <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>dose_D_ug</ci></math>
+          </eventAssignment>
+          
+          <eventAssignment
+            variable="NP_B"
+            metaid="NP_B::single_dose_sw">
+            <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>dose_NP_ug</ci></math>
+          </eventAssignment>
+          
+        </listOfEventAssignments>
+      </event>
+    </listOfEvents>
+  
+<!-- UNIT DEFINITIONS -->
+<listOfUnitDefinitions>
+  <unitDefinition id="_h" name="h">
+  <listOfUnits>
+    <unit kind="second" exponent="1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="__mL_g" name="g/mL">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-3" multiplier="1"/>
+    <unit kind="litre" exponent="-1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_mL" name="mL">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_ug" name="ug">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-9" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_dimensionless" name="dimensionless">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_ug__mL" name="ug/mL">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-9" multiplier="1"/>
+    <unit kind="litre" exponent="-1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_mL__h" name="mL/h">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_ug__h" name="ug/h">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-9" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="__h" name="1/h">
+  <listOfUnits>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_g" name="g">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_kdiffUnits" name="kdiffUnits">
+  <listOfUnits>
+    <unit kind="second" exponent="-0.43" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_ug__g" name="ug/g">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="-6" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_mL__h__g" name="mL/h/g">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+    <unit kind="kilogram" exponent="-1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="__ug_mL__h" name="mL/ug/h">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
+    <unit kind="kilogram" exponent="-1" scale="-9" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+</listOfUnitDefinitions>
+  
+  </model>
+</sbml>
