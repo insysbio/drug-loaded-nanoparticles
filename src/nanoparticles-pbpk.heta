@@ -1,0 +1,111 @@
+/*
+    This is an addon describing nanoparticles distribution
+    and release of drug from nanoparticles.
+*/
+
+// species
+block @Species begin
+    NP_B 'Nanoparticles in blood' {compartment: V_B, units: ug/mL} .= 0;
+    NP_L 'Nanoparticles in liver' {compartment: V_L, units: ug/mL} .= 0;
+    NP_S 'Nanoparticles in spleen' {compartment: V_S, units: ug/mL} .= 0;
+    NP_T 'Nanoparticles in tumor' {compartment: V_T, units: ug/mL} .= 0;
+    NP_K 'Nanoparticles in kidneys' {compartment: V_K, units: ug/mL} .= 0;
+    NP_U 'Nanoparticles in lungs' {compartment: V_U, units: ug/mL} .= 0;
+    NP_R 'Nanoparticles in ROB' {compartment: V_R, units: ug/mL} .= 0;
+end
+
+// doses
+dose_NP_ug @Record {units: ug/mL} := dose_NP_ug_g * W_animal/V_B;        // {ug}
+NP_B [single_dose_sw]= dose_NP_ug;
+
+// records
+block @Record begin
+    NP_P {units: ug/mL} := NP_B / (hemato*Kp_BC_NP+1-hemato);
+end
+// drug release
+v @Record {units: 1} := exp(-kdiff / (1 - gamma) * pow(t + timezero, 1 - gamma));
+vrel @Record {units: 1/h} := kdiff * pow(t + timezero, -gamma) * v * (1 - delta);   
+
+// reactions
+vdist_NP_L @Reaction {actors: NP_B <=> NP_L, units: ug/h};
+vdist_NP_L := PS_L * (NP_P-NP_L/Kp_L_NP);
+
+vdist_NP_S @Reaction {actors: NP_B <=> NP_S, units: ug/h};
+vdist_NP_S := PS_S * (NP_P-NP_S/Kp_S_NP);
+
+vdist_NP_T @Reaction {actors: NP_B <=> NP_T, units: ug/h};
+vdist_NP_T := PS_T * (NP_P-NP_T/Kp_T_NP);
+
+vdist_NP_K @Reaction {actors: NP_B <=> NP_K, units: ug/h};
+vdist_NP_K := PS_K * (NP_P-NP_K/Kp_K_NP);
+
+vdist_NP_U @Reaction {actors: NP_B <=> NP_U, units: ug/h};
+vdist_NP_U := PS_U * (NP_P-NP_U/Kp_U_NP);
+
+vdist_NP_R @Reaction {actors: NP_B <=> NP_R, units: ug/h};
+vdist_NP_R := PS_R * (NP_P-NP_R/Kp_R_NP);
+
+vcl_NP_L @Reaction {actors: NP_L => , units: ug/h};
+vcl_NP_L := zero_rate;
+
+vcl_NP_S @Reaction {actors: NP_S => , units: ug/h};
+vcl_NP_S := zero_rate;
+
+vcl_NP_T @Reaction {actors: NP_T => , units: ug/h};
+vcl_NP_T := zero_rate;
+
+vcl_NP_K @Reaction {actors: NP_K => , units: ug/h};
+vcl_NP_K := zero_rate;
+
+vcl_NP_U @Reaction {actors: NP_U => , units: ug/h};
+vcl_NP_U := zero_rate;
+
+vcl_NP_R @Reaction {actors: NP_R => , units: ug/h};
+vcl_NP_R := zero_rate;
+
+vcl_NP_B @Reaction {actors: NP_B => , units: ug/h};
+vcl_NP_B := zero_rate;
+
+vrel_L @Reaction {actors: => D_L, units: ug/h};
+vrel_L := V_L * NP_L*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_S @Reaction {actors: => D_S, units: ug/h};
+vrel_S := V_S * NP_S*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_T @Reaction {actors: => D_T, units: ug/h};
+vrel_T := V_T * NP_T*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_K @Reaction {actors: => D_K, units: ug/h};
+vrel_K := V_K * NP_K*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_U @Reaction {actors: => D_U, units: ug/h};
+vrel_U := V_U * NP_U*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_R @Reaction {actors: => D_R, units: ug/h};
+vrel_R := V_R * NP_R*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+vrel_B @Reaction {actors: => D_B, units: ug/h};
+vrel_B := V_B * NP_B*vrel*dose_D_ug_g/dose_NP_ug_g;
+
+// === experiment-specific conditions ===
+'''selected based on experimental conditions, per body weight'''
+dose_NP_ug_g @Const 'Injected dose of nanoparticles' {units: ug/g};
+
+// === animal-specific constants ===
+'''Equilibrium partition coefficient (blood cells vs plasma) for nanoparticles, fixed.'''
+Kp_BC_NP @Const {units: 1} = 0; // fixed
+'''Partition coefficient for nanoparticles in liver'''
+Kp_L_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in spleen'''
+Kp_S_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in tumor'''
+Kp_T_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in kidneys'''
+Kp_K_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in lungs'''
+Kp_U_NP @Const {units: 1} = 1e3; // fixed
+'''Partition coefficient for nanoparticles in rest of body'''
+Kp_R_NP @Const {units: 1} = 1e3; // fixed
+
+'''Minimal time value to use expressions like pow(t + timezero, -gamma, see "vrel".'''
+timezero @Const {units: h} = 1e-12;

@@ -5,7 +5,8 @@
 include ./qsp-units.heta
 
 // add main model
-include model.heta type heta
+include drug-pbpk.heta
+include nanoparticles-pbpk.heta
 include observables.heta
 include scenario.heta
 

@@ -1,3 +1,8 @@
+/*
+    This part describes output variable that can be used for simulations
+    and parameter identification. They corresponds to the experimentally measured values.
+*/
+
 '''Constant that was included to plot in log scale only'''
 conczero @Const {units: ug/mL} = 1e-9;
 

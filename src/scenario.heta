@@ -1,3 +1,9 @@
+/*
+    This part describes values defined by experimental conditions.
+    To turn them onn and off uncomment the corresponded parts.
+    The alternative hypothetical way is to implement structures like in ./scenario-proposal.heta file.
+*/
+
 // === compound-specific constants ===
 // fitted based on in-vitro data for U16c #3_205_6
 // doses: dose_D_ug_g=2.5/5.9/11.8, dose_NP_ug_g=30/70/140
