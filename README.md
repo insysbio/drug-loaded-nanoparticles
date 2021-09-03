@@ -1,6 +1,7 @@
 # Drug Loaded Nanoparticles
 
 [![Heta project](https://img.shields.io/badge/%CD%B1-Heta_project-blue)](https://hetalang.github.io/)
+[![Build and Share](https://github.com/insysbio/drug-loaded-nanoparticles/actions/workflows/build-and-share.yml/badge.svg)](https://github.com/insysbio/drug-loaded-nanoparticles/actions/workflows/build-and-share.yml)
 [![GitHub license](https://img.shields.io/github/license/insysbio/drug-loaded-nanoparticles.svg)](https://github.com/insysbio/drug-loaded-nanoparticles/blob/master/LICENSE)
 [![DOI:10.1016/j.jconrel.2017.06.006](https://zenodo.org/badge/DOI/10.1016/j.jconrel.2017.06.006.svg)](https://doi.org/10.1016/j.jconrel.2017.06.006)
 
@@ -20,7 +21,7 @@ Simulated vs measured dependence of average VCR concentration for the NP of type
 
 ![U16c D_L_log](diagnostics/reproduced%20model/U16c%20D_L_log.png)
 
-You find other diagnostic plots in the directory __/diagnostics/reproduced model/__
+You find other diagnostic plots in the directory [/diagnostics/reproduced model/](https://github.com/insysbio/drug-loaded-nanoparticles/tree/main/diagnostics/reproduced%20model)
 
 ## Exported format
 
@@ -32,7 +33,7 @@ See [dist branch](https://github.com/insysbio/drug-loaded-nanoparticles/tree/dis
 - [x] Test simulations for NoNP, U16p, T
 - [x] split Heta code into modules
 - [x] Annotate components
-- [ ] GH Actions + GH pages for exporting to different formats
+- [x] GH Actions for exporting to different formats
 - [ ] Release version 0.1.0
 - [ ] share datasets
 - [ ] Simulations and experimental data in HetaSimulator

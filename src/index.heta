@@ -15,9 +15,9 @@ include scenario.heta
 #export { format: SLV, filepath: model };
 //#export { format: DBSolve, filepath: dbsolve };
 #export { format: SBML, filepath: sbml, version: L2V4 };
+#export { format: Simbio, filepath: simbio };
+#export { format: Mrgsolve, filepath: mrgsolve };
 
 //#export { format: XLSX, filepath: table, omitRows: 3, splitByClass: true };
-//#export { format: Simbio, filepath: simbio };
-//#export { format: Mrgsolve, filepath: mrgsolve };
 //#export { format: Matlab, filepath: matlab };
 //#export { format: Julia, filepath: julia };
