@@ -337,28 +337,6 @@ double vrel_R = V_R * NP_R * vrel * dose_D_ug_g / dose_NP_ug_g;
 // @Reaction ''
 double vrel_B = V_B * NP_B * vrel * dose_D_ug_g / dose_NP_ug_g;
 // @Record ''
-double NP_L_aver = (NP_L * V_L + NP_B * W_animal / rho_avg * w_L * bto_L) / (W_animal / rho_avg * w_L);
-// @Record ''
-double NP_L_log = log(NP_L_aver + conczero);
-// @Record ''
-double NP_S_aver = (NP_S * V_S + NP_B * W_animal / rho_avg * w_S * bto_S) / (W_animal / rho_avg * w_S);
-// @Record ''
-double NP_S_log = log(NP_S_aver + conczero);
-// @Record ''
-double NP_T_aver = (NP_T * V_T + NP_B * W_T / rho_avg * bto_T) / (W_T / rho_avg);
-// @Record ''
-double NP_T_log = log(NP_T_aver + conczero);
-// @Record ''
-double NP_K_aver = (NP_K * V_K + NP_B * W_animal / rho_avg * w_K * bto_K) / (W_animal / rho_avg * w_K);
-// @Record ''
-double NP_K_log = log(NP_K_aver + conczero);
-// @Record ''
-double NP_U_aver = (NP_U * V_U + NP_B * W_animal / rho_avg * w_U * bto_U) / (W_animal / rho_avg * w_U);
-// @Record ''
-double NP_U_log = log(NP_U_aver + conczero);
-// @Record ''
-double NP_P_log = log(NP_P + conczero);
-// @Record ''
 double NP_L_cap = (NP_B * W_animal * w_L * bto_L) / (W_animal * w_L);
 // @Record ''
 double NP_S_cap = (NP_B * W_animal * w_S * bto_S) / (W_animal * w_S);
@@ -379,6 +357,8 @@ double NP_K_tissue = (NP_K * V_K) / (W_animal / rho_avg * w_K);
 // @Record ''
 double NP_U_tissue = (NP_U * V_U) / (W_animal / rho_avg * w_U);
 // @Record ''
+double NP_L_aver = (NP_L * V_L + NP_B * W_animal / rho_avg * w_L * bto_L) / (W_animal / rho_avg * w_L);
+// @Record ''
 double D_all_in_NP = (1.0 - delta) * v;
 // @Record ''
 double D_L_aver0 = NP_L_aver * D_all_in_NP * dose_D_ug_g / dose_NP_ug_g;
@@ -387,7 +367,7 @@ double D_L_free = (D_L * V_L + D_B * W_animal / rho_avg * w_L * bto_L) / (V_L + 
 // @Record ''
 double D_L_aver = D_L_aver0 + D_L_free;
 // @Record ''
-double D_L_log = log(D_L_aver + conczero);
+double NP_S_aver = (NP_S * V_S + NP_B * W_animal / rho_avg * w_S * bto_S) / (W_animal / rho_avg * w_S);
 // @Record ''
 double D_S_aver0 = NP_S_aver * D_all_in_NP * dose_D_ug_g / dose_NP_ug_g;
 // @Record ''
@@ -395,7 +375,7 @@ double D_S_free = (D_S * V_S + D_B * W_animal / rho_avg * w_S * bto_S) / (V_S + 
 // @Record ''
 double D_S_aver = D_S_aver0 + D_S_free;
 // @Record ''
-double D_S_log = log(D_S_aver + conczero);
+double NP_T_aver = (NP_T * V_T + NP_B * W_T / rho_avg * bto_T) / (W_T / rho_avg);
 // @Record ''
 double D_T_aver0 = NP_T_aver * D_all_in_NP * dose_D_ug_g / dose_NP_ug_g;
 // @Record ''
@@ -403,7 +383,7 @@ double D_T_free = (D_T * V_T + D_B * W_T / rho_avg * bto_T) / (V_T + W_T / rho_a
 // @Record ''
 double D_T_aver = D_T_aver0 + D_T_free;
 // @Record ''
-double D_T_log = log(D_T_aver + conczero);
+double NP_K_aver = (NP_K * V_K + NP_B * W_animal / rho_avg * w_K * bto_K) / (W_animal / rho_avg * w_K);
 // @Record ''
 double D_K_aver0 = NP_K_aver * D_all_in_NP * dose_D_ug_g / dose_NP_ug_g;
 // @Record ''
@@ -411,7 +391,7 @@ double D_K_free = (D_K * V_K + D_B * W_animal / rho_avg * w_K * bto_K) / (V_K + 
 // @Record ''
 double D_K_aver = D_K_aver0 + D_K_free;
 // @Record ''
-double D_K_log = log(D_K_aver + conczero);
+double NP_U_aver = (NP_U * V_U + NP_B * W_animal / rho_avg * w_U * bto_U) / (W_animal / rho_avg * w_U);
 // @Record ''
 double D_U_aver0 = NP_U_aver * D_all_in_NP * dose_D_ug_g / dose_NP_ug_g;
 // @Record ''
@@ -419,15 +399,9 @@ double D_U_free = (D_U * V_U + D_B * W_animal / rho_avg * w_U * bto_U) / (V_U + 
 // @Record ''
 double D_U_aver = D_U_aver0 + D_U_free;
 // @Record ''
-double D_U_log = log(D_U_aver + conczero);
-// @Record ''
 double D_P_aver0 = NP_P * D_all_in_NP * dose_D_ug_g / dose_NP_ug_g;
 // @Record ''
 double D_P_aver = D_P_aver0 + D_P;
-// @Record ''
-double D_P_log = log(D_P_aver + conczero);
-// @Record ''
-double D_P_log_free = log(D_P + conczero);
 
 dxdt_D_B_amt_ = (-1)*vdist_D_L + (-1)*vdist_D_S + (-1)*vdist_D_T + (-1)*vdist_D_K + (-1)*vdist_D_U + (-1)*vdist_D_R + (-1)*vcl_D_B + (1)*vrel_B;
 dxdt_D_L_amt_ = (1)*vdist_D_L + (1)*vdist_D_SL + (-1)*vcl_D_L + (1)*vrel_L;
@@ -452,12 +426,6 @@ NP_S_aver :  (ug/mL)
 NP_T_aver :  (ug/mL)
 NP_K_aver :  (ug/mL)
 NP_U_aver :  (ug/mL)
-NP_L_log :  (dimensionless)
-NP_S_log :  (dimensionless)
-NP_T_log :  (dimensionless)
-NP_K_log :  (dimensionless)
-NP_U_log :  (dimensionless)
-NP_P_log :  (dimensionless)
 NP_L_cap :  (ug/mL)
 NP_S_cap :  (ug/mL)
 NP_T_cap :  (ug/mL)
@@ -485,10 +453,3 @@ D_T_aver :  (ug/mL)
 D_K_aver :  (ug/mL)
 D_U_aver :  (ug/mL)
 D_P_aver :  (ug/mL)
-D_L_log :  (dimensionless)
-D_S_log :  (dimensionless)
-D_T_log :  (dimensionless)
-D_K_log :  (dimensionless)
-D_U_log :  (dimensionless)
-D_P_log :  (dimensionless)
-D_P_log_free :  (dimensionless)

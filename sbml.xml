@@ -417,48 +417,6 @@
         >
       </parameter>
       <parameter
-        id="NP_L_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="NP_L_log"
-        >
-      </parameter>
-      <parameter
-        id="NP_S_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="NP_S_log"
-        >
-      </parameter>
-      <parameter
-        id="NP_T_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="NP_T_log"
-        >
-      </parameter>
-      <parameter
-        id="NP_K_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="NP_K_log"
-        >
-      </parameter>
-      <parameter
-        id="NP_U_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="NP_U_log"
-        >
-      </parameter>
-      <parameter
-        id="NP_P_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="NP_P_log"
-        >
-      </parameter>
-      <parameter
         id="NP_L_cap"
         constant="false"
         units="_ug__mL"
@@ -645,55 +603,6 @@
         constant="false"
         units="_ug__mL"
         metaid="D_P_aver"
-        >
-      </parameter>
-      <parameter
-        id="D_L_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="D_L_log"
-        >
-      </parameter>
-      <parameter
-        id="D_S_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="D_S_log"
-        >
-      </parameter>
-      <parameter
-        id="D_T_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="D_T_log"
-        >
-      </parameter>
-      <parameter
-        id="D_K_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="D_K_log"
-        >
-      </parameter>
-      <parameter
-        id="D_U_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="D_U_log"
-        >
-      </parameter>
-      <parameter
-        id="D_P_log"
-        constant="false"
-        units="_dimensionless"
-        metaid="D_P_log"
-        >
-      </parameter>
-      <parameter
-        id="D_P_log_free"
-        constant="false"
-        units="_dimensionless"
-        metaid="D_P_log_free"
         >
       </parameter>
       <parameter
@@ -2329,42 +2238,6 @@
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_U</ci><ci>V_U</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply></apply></math>
     </assignmentRule>
     <assignmentRule
-      variable="NP_L_log"
-      metaid="NP_L_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_L_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_S_log"
-      metaid="NP_S_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_S_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_T_log"
-      metaid="NP_T_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_T_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_K_log"
-      metaid="NP_K_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_K_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_U_log"
-      metaid="NP_U_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_U_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_P_log"
-      metaid="NP_P_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>NP_P</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
       variable="NP_L_cap"
       metaid="NP_L_cap::ode_"
       >
@@ -2525,48 +2398,6 @@
       metaid="D_P_aver::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_P_aver0</ci><ci>D_P</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_L_log"
-      metaid="D_L_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_L_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_S_log"
-      metaid="D_S_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_S_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_T_log"
-      metaid="D_T_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_T_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_K_log"
-      metaid="D_K_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_K_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_U_log"
-      metaid="D_U_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_U_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_P_log"
-      metaid="D_P_log::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_P_aver</ci><ci>conczero</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_P_log_free"
-      metaid="D_P_log_free::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><ln/><apply><plus/><ci>D_P</ci><ci>conczero</ci></apply></apply></math>
     </assignmentRule>
     <rateRule
       variable="response"

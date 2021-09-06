@@ -1413,60 +1413,6 @@
   },
   {
     "class": "Record",
-    "id": "NP_L_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(NP_L_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "NP_S_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(NP_S_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "NP_T_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(NP_T_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "NP_K_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(NP_K_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "NP_U_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(NP_U_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "NP_P_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(NP_P + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
     "id": "NP_L_cap",
     "units": "ug/mL",
     "assignments": {
@@ -1705,69 +1651,6 @@
     "units": "ug/mL",
     "assignments": {
       "ode_": "D_P_aver0 + D_P"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "D_L_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(D_L_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "D_S_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(D_S_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "D_T_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(D_T_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "D_K_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(D_K_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "D_U_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(D_U_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "D_P_log",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(D_P_aver + conczero)"
-    },
-    "output": true
-  },
-  {
-    "class": "Record",
-    "id": "D_P_log_free",
-    "units": "dimensionless",
-    "assignments": {
-      "ode_": "log(D_P + conczero)"
     },
     "output": true
   },
