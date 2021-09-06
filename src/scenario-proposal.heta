@@ -89,7 +89,7 @@ U16p_61_low #setScenario {
     },
     tspan: 50
 };
-U16p_61_low #setScenario {
+U16p_61_middle #setScenario {
     parameters: {
         delta: 4.22e-03,
         kdiff: 1.96e-03,
@@ -105,7 +105,7 @@ U16p_61_low #setScenario {
     },
     tspan: 50
 };
-U16p_61_low #setScenario {
+U16p_61_high #setScenario {
     parameters: {
         delta: 4.22e-03,
         kdiff: 1.96e-03,
@@ -131,6 +131,7 @@ T_67_low #setScenario {
         delta: 2.22e-02,
         kdiff: 6.26e-02,
         gamma: 5.98e-01,
+        W_animal: 21.8,
         W_T: 0.472,
         w_L: 0.0572,
         w_S: 0.00520,
@@ -146,6 +147,7 @@ T_67_middle #setScenario {
         delta: 2.22e-02,
         kdiff: 6.26e-02,
         gamma: 5.98e-01,
+        W_animal: 21.8,
         W_T: 0.472,
         w_L: 0.0572,
         w_S: 0.00520,
@@ -161,6 +163,7 @@ T_67_high #setScenario {
         delta: 2.22e-02,
         kdiff: 6.26e-02,
         gamma: 5.98e-01,
+        W_animal: 21.8,
         W_T: 0.472,
         w_L: 0.0572,
         w_S: 0.00520,

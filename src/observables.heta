@@ -14,14 +14,14 @@ block @Record {output: true} begin
     NP_T_aver {units: ug/mL} := (NP_T*V_T+NP_B*W_T/rho_avg*bto_T)/(W_T/rho_avg);
     NP_K_aver {units: ug/mL} := (NP_K*V_K+NP_B*W_animal/rho_avg*w_K*bto_K)/(W_animal/rho_avg*w_K);
     NP_U_aver {units: ug/mL} := (NP_U*V_U+NP_B*W_animal/rho_avg*w_U*bto_U)/(W_animal/rho_avg*w_U);
-    
+    /*
     NP_L_log {units: 1} := log(NP_L_aver+ conczero);
     NP_S_log {units: 1} := log(NP_S_aver+ conczero);
     NP_T_log {units: 1} := log(NP_T_aver+ conczero);
     NP_K_log {units: 1} := log(NP_K_aver+ conczero);
     NP_U_log {units: 1} := log(NP_U_aver+ conczero);
     NP_P_log {units: 1} := log(NP_P+ conczero);
-    
+    */
     NP_L_cap {units: ug/mL} := (NP_B*W_animal*w_L*bto_L)/(W_animal*w_L);          // {ug/ml}  mean concentration in capilaries of organ (total organ volume)
     NP_S_cap {units: ug/mL} := (NP_B*W_animal*w_S*bto_S)/(W_animal*w_S);
     NP_T_cap {units: ug/mL} := (NP_B*W_T*bto_T)/(W_T);
@@ -54,7 +54,7 @@ block @Record {output: true} begin
     D_K_aver {units: ug/mL} := D_K_aver0+D_K_free;
     D_U_aver {units: ug/mL} := D_U_aver0+D_U_free;
     D_P_aver {units: ug/mL} := D_P_aver0+D_P;
-    
+    /*
     D_L_log {units: 1} := log(D_L_aver+ conczero);
     D_S_log {units: 1} := log(D_S_aver+ conczero);
     D_T_log {units: 1} := log(D_T_aver+ conczero);
@@ -63,4 +63,5 @@ block @Record {output: true} begin
     D_P_log {units: 1} := log(D_P_aver+ conczero);
     
     D_P_log_free {units: 1} := log(D_P+ conczero);
+    */
 end
