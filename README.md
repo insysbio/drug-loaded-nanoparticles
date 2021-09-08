@@ -29,14 +29,9 @@ See [dist branch](https://github.com/insysbio/drug-loaded-nanoparticles/tree/dis
 
 ## TODO
 
-- [x] experimental data vs simulation comparison in DBSolve
-- [x] Test simulations for NoNP, U16p, T
-- [x] split Heta code into modules
-- [x] Annotate components
-- [x] GH Actions for exporting to different formats
-- [x] Release version 0.1.0
-- [ ] Share the datasets
-- [ ] Simulations and experimental data in HetaSimulator
+- [x] Simulations and experimental data in HetaSimulator
+- [x] Share the datasets
+- [ ] Reproduce fitting
 
 ## Contributors
 
