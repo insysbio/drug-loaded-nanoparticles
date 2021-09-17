@@ -220,11 +220,11 @@ Kp_T_D @Const {units: 1} = 63.2;
 
 '''Scaling factor for PS parameters'''
 b_PS @Const {units: 1} = 1; // fixed
-'''Coefficient describing responce action on kidneys'''
+'''Coefficient describing response action on kidneys'''
 koef_resp_K @Const {units: 1} = 7.93e+1;
-'''Coefficient describing responce action on liver'''
+'''Coefficient describing response action on liver'''
 koef_resp_L @Const {units: 1} = 2.09e+2;
-'''Coefficient describing responce action on rest of body'''
+'''Coefficient describing response action on rest of body'''
 koef_resp_R @Const {units: 1} = 2.46e+2;
 
 '''"Synthesis" of indirect response coefficient'''

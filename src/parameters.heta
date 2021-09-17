@@ -1,0 +1,7 @@
+// distribution parameters
+sigma_K @Const = 0.1;
+sigma_L @Const = 0.1;
+sigma_S @Const = 0.1;
+sigma_T @Const = 0.1;
+sigma_U @Const = 0.1;
+sigma_P @Const = 0.1;
