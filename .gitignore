@@ -9,3 +9,4 @@
 ~$*.*
 *.log
 .Rhistory
+/.vscode
