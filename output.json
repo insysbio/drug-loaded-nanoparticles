@@ -825,21 +825,21 @@
   {
     "class": "Const",
     "id": "koef_resp_K",
-    "notes": "Coefficient describing responce action on kidneys",
+    "notes": "Coefficient describing response action on kidneys",
     "units": "dimensionless",
     "num": 79.3
   },
   {
     "class": "Const",
     "id": "koef_resp_L",
-    "notes": "Coefficient describing responce action on liver",
+    "notes": "Coefficient describing response action on liver",
     "units": "dimensionless",
     "num": 209
   },
   {
     "class": "Const",
     "id": "koef_resp_R",
-    "notes": "Coefficient describing responce action on rest of body",
+    "notes": "Coefficient describing response action on rest of body",
     "units": "dimensionless",
     "num": 246
   },
@@ -1653,6 +1653,36 @@
       "ode_": "D_P_aver0 + D_P"
     },
     "output": true
+  },
+  {
+    "class": "Const",
+    "id": "sigma_K",
+    "num": 0.1
+  },
+  {
+    "class": "Const",
+    "id": "sigma_L",
+    "num": 0.1
+  },
+  {
+    "class": "Const",
+    "id": "sigma_S",
+    "num": 0.1
+  },
+  {
+    "class": "Const",
+    "id": "sigma_T",
+    "num": 0.1
+  },
+  {
+    "class": "Const",
+    "id": "sigma_U",
+    "num": 0.1
+  },
+  {
+    "class": "Const",
+    "id": "sigma_P",
+    "num": 0.1
   },
   {
     "id": "fmole",

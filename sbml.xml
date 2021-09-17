@@ -1239,7 +1239,7 @@
         >
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
-            <p>Coefficient describing responce action on kidneys</p>
+            <p>Coefficient describing response action on kidneys</p>
 
           </html>
         </notes>
@@ -1253,7 +1253,7 @@
         >
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
-            <p>Coefficient describing responce action on liver</p>
+            <p>Coefficient describing response action on liver</p>
 
           </html>
         </notes>
@@ -1267,7 +1267,7 @@
         >
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
-            <p>Coefficient describing responce action on rest of body</p>
+            <p>Coefficient describing response action on rest of body</p>
 
           </html>
         </notes>
@@ -1453,6 +1453,48 @@
 
           </html>
         </notes>
+      </parameter>
+      <parameter
+        id="sigma_K"
+        constant="true"
+        value="0.1"
+        metaid="sigma_K"
+        >
+      </parameter>
+      <parameter
+        id="sigma_L"
+        constant="true"
+        value="0.1"
+        metaid="sigma_L"
+        >
+      </parameter>
+      <parameter
+        id="sigma_S"
+        constant="true"
+        value="0.1"
+        metaid="sigma_S"
+        >
+      </parameter>
+      <parameter
+        id="sigma_T"
+        constant="true"
+        value="0.1"
+        metaid="sigma_T"
+        >
+      </parameter>
+      <parameter
+        id="sigma_U"
+        constant="true"
+        value="0.1"
+        metaid="sigma_U"
+        >
+      </parameter>
+      <parameter
+        id="sigma_P"
+        constant="true"
+        value="0.1"
+        metaid="sigma_P"
+        >
       </parameter>
     </listOfParameters>
   

@@ -175,11 +175,11 @@ nameless.parameter.Kp_T_D = addparameter(nameless_model, 'Kp_T_D', 'ConstantValu
 ', 'Tag', '');
 nameless.parameter.b_PS = addparameter(nameless_model, 'b_PS', 'ConstantValue', true, 'Value', 1, 'ValueUnits', 'dimensionless', 'Notes', '<p>Scaling factor for PS parameters</p>
 ', 'Tag', '');
-nameless.parameter.koef_resp_K = addparameter(nameless_model, 'koef_resp_K', 'ConstantValue', true, 'Value', 79.3, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing responce action on kidneys</p>
+nameless.parameter.koef_resp_K = addparameter(nameless_model, 'koef_resp_K', 'ConstantValue', true, 'Value', 79.3, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing response action on kidneys</p>
 ', 'Tag', '');
-nameless.parameter.koef_resp_L = addparameter(nameless_model, 'koef_resp_L', 'ConstantValue', true, 'Value', 209, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing responce action on liver</p>
+nameless.parameter.koef_resp_L = addparameter(nameless_model, 'koef_resp_L', 'ConstantValue', true, 'Value', 209, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing response action on liver</p>
 ', 'Tag', '');
-nameless.parameter.koef_resp_R = addparameter(nameless_model, 'koef_resp_R', 'ConstantValue', true, 'Value', 246, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing responce action on rest of body</p>
+nameless.parameter.koef_resp_R = addparameter(nameless_model, 'koef_resp_R', 'ConstantValue', true, 'Value', 246, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing response action on rest of body</p>
 ', 'Tag', '');
 nameless.parameter.syn_resp = addparameter(nameless_model, 'syn_resp', 'ConstantValue', true, 'Value', 1, 'ValueUnits', 'millilitre/microgram/hour', 'Notes', '<p>&quot;Synthesis&quot; of indirect response coefficient</p>
 ', 'Tag', '');
@@ -207,6 +207,12 @@ nameless.parameter.timezero = addparameter(nameless_model, 'timezero', 'Constant
 ', 'Tag', '');
 nameless.parameter.conczero = addparameter(nameless_model, 'conczero', 'ConstantValue', true, 'Value', 1e-9, 'ValueUnits', 'microgram/millilitre', 'Notes', '<p>Constant that was included to plot in log scale only</p>
 ', 'Tag', '');
+nameless.parameter.sigma_K = addparameter(nameless_model, 'sigma_K', 'ConstantValue', true, 'Value', 0.1, 'Notes', '', 'Tag', '');
+nameless.parameter.sigma_L = addparameter(nameless_model, 'sigma_L', 'ConstantValue', true, 'Value', 0.1, 'Notes', '', 'Tag', '');
+nameless.parameter.sigma_S = addparameter(nameless_model, 'sigma_S', 'ConstantValue', true, 'Value', 0.1, 'Notes', '', 'Tag', '');
+nameless.parameter.sigma_T = addparameter(nameless_model, 'sigma_T', 'ConstantValue', true, 'Value', 0.1, 'Notes', '', 'Tag', '');
+nameless.parameter.sigma_U = addparameter(nameless_model, 'sigma_U', 'ConstantValue', true, 'Value', 0.1, 'Notes', '', 'Tag', '');
+nameless.parameter.sigma_P = addparameter(nameless_model, 'sigma_P', 'ConstantValue', true, 'Value', 0.1, 'Notes', '', 'Tag', '');
 
 % Reactions
 nameless.reaction.vdist_D_L = addreaction(nameless_model, 'null -> null', 'Name', 'vdist_D_L', 'Active', true, 'Reversible', true, 'ReactionRate', '(Q_L - Q_S) * (D_B) - Q_L * (D_L / Kp_L_D * (hemato * Kp_BC_D + 1 - hemato))', 'Notes', '', 'Tag', '');

@@ -134,6 +134,18 @@ Kp_R_NP : 1000 : (dimensionless)
 timezero : 1e-12 : (h)
 // @Const ''
 conczero : 1e-9 : (ug/mL)
+// @Const ''
+sigma_K : 0.1 : 
+// @Const ''
+sigma_L : 0.1 : 
+// @Const ''
+sigma_S : 0.1 : 
+// @Const ''
+sigma_T : 0.1 : 
+// @Const ''
+sigma_U : 0.1 : 
+// @Const ''
+sigma_P : 0.1 : 
 
 $CMT @annotated
 // @Species 'Free drug in blood'
