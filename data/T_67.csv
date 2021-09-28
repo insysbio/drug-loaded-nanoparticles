@@ -1,4 +1,4 @@
-t,measurement,prob.mean,prob.sigma,prob.type,condition
+t,measurement,prob.mean,prob.sigma,prob.type,scenario
 1.9,1.66,D_K_aver,sigma_K,lognormal,T_67_low
 2.0,1.31,D_K_aver,sigma_K,lognormal,T_67_low
 2.0,1.68,D_K_aver,sigma_K,lognormal,T_67_low

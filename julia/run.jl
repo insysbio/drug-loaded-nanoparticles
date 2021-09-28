@@ -5,12 +5,12 @@ p = load_platform("./src")
 
 m = p.models[:nameless]
 
-sim(m, tspan = (0, 50)) |> plot
+Scenario(m, tspan = (0, 50)) |> sim |> plot
 
-### Add conditions
+### Add scenarios
 
-conditions_df = read_conditions("./data/conditions.csv")
-add_conditions!(p, conditions_df)
+scenarios_df = read_scenarios("./data/scenarios.csv")
+add_scenarios!(p, scenarios_df)
 
 ### Add measurements
 data1 = read_measurements("./data/NoNP_67.csv")
@@ -22,13 +22,20 @@ add_measurements!(p, data2)
 add_measurements!(p, data3)
 add_measurements!(p, data4)
 
-res = sim(p, conditions = [:T_67_low, :T_67_middle, :T_67_high])
+# measure = get_measuments(p, scenarios=[:T_67_low])
+# measure1 = get_measuments(scenarios(p)[:T_67_low])
+
+# measure2 = get_measurements(res)
+# simulate2 = DataFrame(res)
+
 res = sim(p)
 plot(res, yscale=:log10, ylims=(1e-1,1e3))
 #plotd = plot(res)
 #savefig(plotd, "sim1.png")
 
 ### fitting
+
+# to_fit = read_parameters("./julia/parameters.csv")
 
 to_fit = [
     :sigma_K => 0.1,
@@ -67,6 +74,7 @@ to_fit = [
 fit_res = fit(p, to_fit)
 
 optim(fit_res)
+# save_heta("fitted.heta", it_res)
 
 res_optim = sim(p, parameters_upd = optim(fit_res))
 plot(res_optim, yscale=:log10, ylims=(1e-1,1e3))
