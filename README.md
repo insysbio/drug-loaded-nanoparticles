@@ -17,11 +17,20 @@ This repository includes the model reproduced from the the paper and datasets fr
 
 ## Diagnostics
 
+### The original model and parameters
+
 Simulated vs measured dependence of average VCR concentration for the NP of type U16c.
 
 ![U16c D_L_log](diagnostics/reproduced%20model/U16c%20D_L_log.png)
 
 You find other diagnostic plots in the directory [/diagnostics/reproduced model/](https://github.com/insysbio/drug-loaded-nanoparticles/tree/main/diagnostics/reproduced%20model)
+
+### Reproduced in HetaSimulator.jl and fitted
+
+![U16c_61](diagnostics/heta-simulator/U16c_61.png)
+![U16p_61](diagnostics/heta-simulator/U16p_61.png)
+![T_67](diagnostics/heta-simulator/T_67.png)
+![NoNP_67](diagnostics/heta-simulator/NoNP_67.png)
 
 ## Exported formats
 
@@ -31,7 +40,7 @@ See [dist branch](https://github.com/insysbio/drug-loaded-nanoparticles/tree/dis
 
 - [x] Simulations and experimental data in HetaSimulator
 - [x] Share the datasets
-- [ ] Reproduce fitting
+- [x] Reproduce fitting
 
 ## Contributors
 

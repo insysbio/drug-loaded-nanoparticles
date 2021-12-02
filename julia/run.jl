@@ -30,7 +30,7 @@ add_measurements!(p, data4)
 
 res = sim(p)
 plot(res, yscale=:log10, ylims=(1e-1,1e3))
-#plotd = plot(res)
+#plotd = plot(res, yscale=:log10, ylims=(1e-1,1e3))
 #savefig(plotd, "sim1.png")
 
 ### fitting
@@ -71,10 +71,22 @@ to_fit = [
     :tar_S => 9.044673e-01,
     :w_B_m => 8.138074e-02
 ]
+# OFV: 2584
 fit_res = fit(p, to_fit)
 
 optim(fit_res)
-# save_heta("fitted.heta", it_res)
+# save_as_heta("julia/fitted.heta", fit_res)
 
 res_optim = sim(p, parameters_upd = optim(fit_res))
-plot(res_optim, yscale=:log10, ylims=(1e-1,1e3))
+plot(res_optim, yscale=:log10, ylims=(1e-4,1e3))
+
+## plot fitted results in files
+plot1 = plot(res_optim[1:3], yscale=:log10, ylims=(1e-1,1e3))
+plot2 = plot(res_optim[4:6], yscale=:log10, ylims=(1e-1,1e3))
+plot3 = plot(res_optim[7:9], yscale=:log10, ylims=(1e-1,1e3))
+plot4 = plot(res_optim[10:11], yscale=:log10, ylims=(1e-4,1e3))
+
+savefig(plot1, "diagnostics/heta-simulator/U16c_61.png")
+savefig(plot2, "diagnostics/heta-simulator/U16p_61.png")
+savefig(plot3, "diagnostics/heta-simulator/T_67.png")
+savefig(plot4, "diagnostics/heta-simulator/NoNP_67.png")
