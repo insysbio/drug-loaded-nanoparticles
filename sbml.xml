@@ -9,6 +9,90 @@
     metaid="nameless"
     >
     
+<!-- BEGIN UNIT DEFINITIONS -->
+    <listOfUnitDefinitions>
+    <unitDefinition id="_h" name="h">
+  <listOfUnits>
+    <unit kind="second" exponent="1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="__mL_g" name="g/mL">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-3" multiplier="1"/>
+    <unit kind="litre" exponent="-1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_mL" name="mL">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_ug" name="ug">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-9" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_dimensionless" name="dimensionless">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_ug__mL" name="ug/mL">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-9" multiplier="1"/>
+    <unit kind="litre" exponent="-1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_mL__h" name="mL/h">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_ug__h" name="ug/h">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-9" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="__h" name="1/h">
+  <listOfUnits>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_g" name="g">
+  <listOfUnits>
+    <unit kind="kilogram" exponent="1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_kdiffUnits" name="kdiffUnits">
+  <listOfUnits>
+    <unit kind="second" exponent="-0.43" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_ug__g" name="ug/g">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="-6" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_mL__h__g" name="mL/h/g">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+    <unit kind="kilogram" exponent="-1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="__ug_mL__h" name="mL/ug/h">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
+    <unit kind="kilogram" exponent="-1" scale="-9" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    </listOfUnitDefinitions>
+<!-- END UNIT DEFINITIONS -->
+  
+  
     <listOfCompartments>
       <compartment
         id="V_B"
@@ -1498,6 +1582,376 @@
       </parameter>
     </listOfParameters>
   
+<!-- BEGIN RULES -->
+  <listOfRules>
+    <assignmentRule
+      variable="rho_avg"
+      metaid="rho_avg::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><cn>1</cn></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_B"
+      metaid="V_B::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><apply><plus/><apply><plus/><apply><plus/><apply><plus/><ci>w_B</ci><apply><times/><ci>w_L</ci><ci>bto_L</ci></apply></apply><apply><times/><ci>w_S</ci><ci>bto_S</ci></apply></apply><apply><times/><ci>w_K</ci><ci>bto_K</ci></apply></apply><apply><times/><ci>w_U</ci><ci>bto_U</ci></apply></apply></apply><apply><times/><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_L"
+      metaid="V_L::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply><apply><minus/><cn>1</cn><ci>bto_L</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_S"
+      metaid="V_S::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply><apply><minus/><cn>1</cn><ci>bto_S</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_T"
+      metaid="V_T::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply><apply><minus/><cn>1</cn><ci>bto_T</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_K"
+      metaid="V_K::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply><apply><minus/><cn>1</cn><ci>bto_K</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_U"
+      metaid="V_U::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply><apply><minus/><cn>1</cn><ci>bto_U</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_R"
+      metaid="V_R::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_R</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="V_P"
+      metaid="V_P::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>V_B</ci><apply><minus/><cn>1</cn><ci>hemato</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="dose_D_ug"
+      metaid="dose_D_ug::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>delta</ci><ci>dose_D_ug_g</ci></apply><ci>W_animal</ci></apply><ci>V_B</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_P"
+      metaid="D_P::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>D_B</ci><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_D</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_L"
+      metaid="PS_L::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>PS_L_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_L</ci><ci>W_animal</ci></apply><ci>w_L_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply><apply><exp/><apply><times/><apply><minus/><ci>koef_resp_L</ci></apply><ci>response</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_S"
+      metaid="PS_S::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_S_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_S</ci><ci>W_animal</ci></apply><ci>w_S_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_T"
+      metaid="PS_T::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_T_061</ci><apply><power/><apply><divide/><ci>W_T</ci><ci>W_T_061</ci></apply><ci>b_PS</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_K"
+      metaid="PS_K::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>PS_K_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_K</ci><ci>W_animal</ci></apply><ci>w_K_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply><apply><exp/><apply><times/><apply><minus/><ci>koef_resp_K</ci></apply><ci>response</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_U"
+      metaid="PS_U::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_U_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_U</ci><ci>W_animal</ci></apply><ci>w_U_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PS_R"
+      metaid="PS_R::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>PS_R_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_R</ci><ci>W_animal</ci></apply><ci>w_R_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply><apply><exp/><apply><times/><apply><minus/><ci>koef_resp_R</ci></apply><ci>response</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="w_R"
+      metaid="w_R::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><cn>1</cn><ci>w_L</ci></apply><ci>w_S</ci></apply><ci>w_K</ci></apply><ci>w_U</ci></apply><ci>w_B</ci></apply><apply><divide/><ci>W_T</ci><ci>W_animal</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="w_R_061"
+      metaid="w_R_061::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><cn>1</cn><ci>w_L_061</ci></apply><ci>w_S_061</ci></apply><ci>w_K_061</ci></apply><ci>w_U_061</ci></apply><ci>w_B_061</ci></apply><apply><divide/><ci>W_T_061</ci><ci>W_animal_061</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="Q_T"
+      metaid="Q_T::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>Q_T_g</ci><ci>W_T</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="v_ir"
+      metaid="v_ir::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><times/><ci>syn_resp</ci><ci>D_P</ci></apply><apply><times/><ci>deg_resp</ci><ci>response</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="dose_NP_ug"
+      metaid="dose_NP_ug::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>dose_NP_ug_g</ci><ci>W_animal</ci></apply><ci>V_B</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_P"
+      metaid="NP_P::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>NP_B</ci><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_NP</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="v"
+      metaid="v::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><exp/><apply><times/><apply><divide/><apply><minus/><ci>kdiff</ci></apply><apply><minus/><cn>1</cn><ci>gamma</ci></apply></apply><apply><power/><apply><plus/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>timezero</ci></apply><apply><minus/><cn>1</cn><ci>gamma</ci></apply></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="vrel"
+      metaid="vrel::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><times/><ci>kdiff</ci><apply><power/><apply><plus/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>timezero</ci></apply><apply><minus/><ci>gamma</ci></apply></apply></apply><ci>v</ci></apply><apply><minus/><cn>1</cn><ci>delta</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_all_in_NP"
+      metaid="D_all_in_NP::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><minus/><cn>1</cn><ci>delta</ci></apply><ci>v</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_L_aver"
+      metaid="NP_L_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_L</ci><ci>V_L</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_S_aver"
+      metaid="NP_S_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_S</ci><ci>V_S</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_T_aver"
+      metaid="NP_T_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_T</ci><ci>V_T</ci></apply><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_T</ci></apply><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_K_aver"
+      metaid="NP_K_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_K</ci><ci>V_K</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_U_aver"
+      metaid="NP_U_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_U</ci><ci>V_U</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_L_cap"
+      metaid="NP_L_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply><apply><times/><ci>W_animal</ci><ci>w_L</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_S_cap"
+      metaid="NP_S_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply><apply><times/><ci>W_animal</ci><ci>w_S</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_T_cap"
+      metaid="NP_T_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_T</ci></apply><ci>bto_T</ci></apply><ci>W_T</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_K_cap"
+      metaid="NP_K_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply><apply><times/><ci>W_animal</ci><ci>w_K</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_U_cap"
+      metaid="NP_U_cap::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply><apply><times/><ci>W_animal</ci><ci>w_U</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_L_tissue"
+      metaid="NP_L_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_L</ci><ci>V_L</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_S_tissue"
+      metaid="NP_S_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_S</ci><ci>V_S</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_T_tissue"
+      metaid="NP_T_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_T</ci><ci>V_T</ci></apply><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_K_tissue"
+      metaid="NP_K_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_K</ci><ci>V_K</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="NP_U_tissue"
+      metaid="NP_U_tissue::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_U</ci><ci>V_U</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_L_free"
+      metaid="D_L_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_L</ci><ci>V_L</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply></apply><apply><plus/><ci>V_L</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_S_free"
+      metaid="D_S_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_S</ci><ci>V_S</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply></apply><apply><plus/><ci>V_S</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_T_free"
+      metaid="D_T_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_T</ci><ci>V_T</ci></apply><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_T</ci></apply><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply><apply><plus/><ci>V_T</ci><apply><times/><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_K_free"
+      metaid="D_K_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_K</ci><ci>V_K</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply></apply><apply><plus/><ci>V_K</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_U_free"
+      metaid="D_U_free::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_U</ci><ci>V_U</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply><apply><plus/><ci>V_U</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_L_aver0"
+      metaid="D_L_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_L_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_S_aver0"
+      metaid="D_S_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_S_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_T_aver0"
+      metaid="D_T_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_T_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_K_aver0"
+      metaid="D_K_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_K_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_U_aver0"
+      metaid="D_U_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_U_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_P_aver0"
+      metaid="D_P_aver0::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_P</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_L_aver"
+      metaid="D_L_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_L_aver0</ci><ci>D_L_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_S_aver"
+      metaid="D_S_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_S_aver0</ci><ci>D_S_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_T_aver"
+      metaid="D_T_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_T_aver0</ci><ci>D_T_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_K_aver"
+      metaid="D_K_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_K_aver0</ci><ci>D_K_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_U_aver"
+      metaid="D_U_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_U_aver0</ci><ci>D_U_free</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="D_P_aver"
+      metaid="D_P_aver::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_P_aver0</ci><ci>D_P</ci></apply></math>
+    </assignmentRule>
+    <rateRule
+      variable="response"
+      metaid="response::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <cn>1</cn>
+            <ci>v_ir</ci>
+          </apply>
+        </apply>
+      </math>
+    </rateRule>
+  
+  
+  </listOfRules>
+<!-- BEGIN RULES -->
+  
     <listOfReactions>
       <reaction
         id="vdist_D_L"
@@ -2092,375 +2546,7 @@
       </reaction>
     </listOfReactions>
   
-  <listOfRules>
-    <assignmentRule
-      variable="rho_avg"
-      metaid="rho_avg::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><cn>1</cn></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="V_B"
-      metaid="V_B::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><apply><plus/><apply><plus/><apply><plus/><apply><plus/><ci>w_B</ci><apply><times/><ci>w_L</ci><ci>bto_L</ci></apply></apply><apply><times/><ci>w_S</ci><ci>bto_S</ci></apply></apply><apply><times/><ci>w_K</ci><ci>bto_K</ci></apply></apply><apply><times/><ci>w_U</ci><ci>bto_U</ci></apply></apply></apply><apply><times/><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="V_L"
-      metaid="V_L::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply><apply><minus/><cn>1</cn><ci>bto_L</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="V_S"
-      metaid="V_S::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply><apply><minus/><cn>1</cn><ci>bto_S</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="V_T"
-      metaid="V_T::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply><apply><minus/><cn>1</cn><ci>bto_T</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="V_K"
-      metaid="V_K::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply><apply><minus/><cn>1</cn><ci>bto_K</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="V_U"
-      metaid="V_U::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply><apply><minus/><cn>1</cn><ci>bto_U</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="V_R"
-      metaid="V_R::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_R</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="V_P"
-      metaid="V_P::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>V_B</ci><apply><minus/><cn>1</cn><ci>hemato</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="dose_D_ug"
-      metaid="dose_D_ug::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>delta</ci><ci>dose_D_ug_g</ci></apply><ci>W_animal</ci></apply><ci>V_B</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_P"
-      metaid="D_P::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>D_B</ci><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_D</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="PS_L"
-      metaid="PS_L::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>PS_L_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_L</ci><ci>W_animal</ci></apply><ci>w_L_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply><apply><exp/><apply><times/><apply><minus/><ci>koef_resp_L</ci></apply><ci>response</ci></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="PS_S"
-      metaid="PS_S::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_S_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_S</ci><ci>W_animal</ci></apply><ci>w_S_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="PS_T"
-      metaid="PS_T::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_T_061</ci><apply><power/><apply><divide/><ci>W_T</ci><ci>W_T_061</ci></apply><ci>b_PS</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="PS_K"
-      metaid="PS_K::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>PS_K_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_K</ci><ci>W_animal</ci></apply><ci>w_K_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply><apply><exp/><apply><times/><apply><minus/><ci>koef_resp_K</ci></apply><ci>response</ci></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="PS_U"
-      metaid="PS_U::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>PS_U_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_U</ci><ci>W_animal</ci></apply><ci>w_U_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="PS_R"
-      metaid="PS_R::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>PS_R_061</ci><apply><power/><apply><divide/><apply><divide/><apply><times/><ci>w_R</ci><ci>W_animal</ci></apply><ci>w_R_061</ci></apply><ci>W_animal_061</ci></apply><ci>b_PS</ci></apply></apply><apply><exp/><apply><times/><apply><minus/><ci>koef_resp_R</ci></apply><ci>response</ci></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="w_R"
-      metaid="w_R::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><cn>1</cn><ci>w_L</ci></apply><ci>w_S</ci></apply><ci>w_K</ci></apply><ci>w_U</ci></apply><ci>w_B</ci></apply><apply><divide/><ci>W_T</ci><ci>W_animal</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="w_R_061"
-      metaid="w_R_061::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><apply><minus/><cn>1</cn><ci>w_L_061</ci></apply><ci>w_S_061</ci></apply><ci>w_K_061</ci></apply><ci>w_U_061</ci></apply><ci>w_B_061</ci></apply><apply><divide/><ci>W_T_061</ci><ci>W_animal_061</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="Q_T"
-      metaid="Q_T::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>Q_T_g</ci><ci>W_T</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="v_ir"
-      metaid="v_ir::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><apply><times/><ci>syn_resp</ci><ci>D_P</ci></apply><apply><times/><ci>deg_resp</ci><ci>response</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="dose_NP_ug"
-      metaid="dose_NP_ug::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>dose_NP_ug_g</ci><ci>W_animal</ci></apply><ci>V_B</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_P"
-      metaid="NP_P::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>NP_B</ci><apply><minus/><apply><plus/><apply><times/><ci>hemato</ci><ci>Kp_BC_NP</ci></apply><cn>1</cn></apply><ci>hemato</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="v"
-      metaid="v::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><exp/><apply><times/><apply><divide/><apply><minus/><ci>kdiff</ci></apply><apply><minus/><cn>1</cn><ci>gamma</ci></apply></apply><apply><power/><apply><plus/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>timezero</ci></apply><apply><minus/><cn>1</cn><ci>gamma</ci></apply></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="vrel"
-      metaid="vrel::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><apply><times/><ci>kdiff</ci><apply><power/><apply><plus/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>timezero</ci></apply><apply><minus/><ci>gamma</ci></apply></apply></apply><ci>v</ci></apply><apply><minus/><cn>1</cn><ci>delta</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_all_in_NP"
-      metaid="D_all_in_NP::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><minus/><cn>1</cn><ci>delta</ci></apply><ci>v</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_L_aver"
-      metaid="NP_L_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_L</ci><ci>V_L</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_S_aver"
-      metaid="NP_S_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_S</ci><ci>V_S</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_T_aver"
-      metaid="NP_T_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_T</ci><ci>V_T</ci></apply><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_T</ci></apply><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_K_aver"
-      metaid="NP_K_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_K</ci><ci>V_K</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_U_aver"
-      metaid="NP_U_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>NP_U</ci><ci>V_U</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_L_cap"
-      metaid="NP_L_cap::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply><apply><times/><ci>W_animal</ci><ci>w_L</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_S_cap"
-      metaid="NP_S_cap::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply><apply><times/><ci>W_animal</ci><ci>w_S</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_T_cap"
-      metaid="NP_T_cap::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_T</ci></apply><ci>bto_T</ci></apply><ci>W_T</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_K_cap"
-      metaid="NP_K_cap::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply><apply><times/><ci>W_animal</ci><ci>w_K</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_U_cap"
-      metaid="NP_U_cap::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>NP_B</ci><ci>W_animal</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply><apply><times/><ci>W_animal</ci><ci>w_U</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_L_tissue"
-      metaid="NP_L_tissue::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_L</ci><ci>V_L</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_S_tissue"
-      metaid="NP_S_tissue::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_S</ci><ci>V_S</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_T_tissue"
-      metaid="NP_T_tissue::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_T</ci><ci>V_T</ci></apply><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_K_tissue"
-      metaid="NP_K_tissue::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_K</ci><ci>V_K</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="NP_U_tissue"
-      metaid="NP_U_tissue::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>NP_U</ci><ci>V_U</ci></apply><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_L_free"
-      metaid="D_L_free::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_L</ci><ci>V_L</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply></apply><apply><plus/><ci>V_L</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_L</ci></apply><ci>bto_L</ci></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_S_free"
-      metaid="D_S_free::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_S</ci><ci>V_S</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply></apply><apply><plus/><ci>V_S</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_S</ci></apply><ci>bto_S</ci></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_T_free"
-      metaid="D_T_free::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_T</ci><ci>V_T</ci></apply><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_T</ci></apply><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply><apply><plus/><ci>V_T</ci><apply><times/><apply><divide/><ci>W_T</ci><ci>rho_avg</ci></apply><ci>bto_T</ci></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_K_free"
-      metaid="D_K_free::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_K</ci><ci>V_K</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply></apply><apply><plus/><ci>V_K</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_K</ci></apply><ci>bto_K</ci></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_U_free"
-      metaid="D_U_free::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><plus/><apply><times/><ci>D_U</ci><ci>V_U</ci></apply><apply><times/><apply><times/><apply><divide/><apply><times/><ci>D_B</ci><ci>W_animal</ci></apply><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply><apply><plus/><ci>V_U</ci><apply><times/><apply><times/><apply><divide/><ci>W_animal</ci><ci>rho_avg</ci></apply><ci>w_U</ci></apply><ci>bto_U</ci></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_L_aver0"
-      metaid="D_L_aver0::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_L_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_S_aver0"
-      metaid="D_S_aver0::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_S_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_T_aver0"
-      metaid="D_T_aver0::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_T_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_K_aver0"
-      metaid="D_K_aver0::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_K_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_U_aver0"
-      metaid="D_U_aver0::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_U_aver</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_P_aver0"
-      metaid="D_P_aver0::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>NP_P</ci><ci>D_all_in_NP</ci></apply><ci>dose_D_ug_g</ci></apply><ci>dose_NP_ug_g</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_L_aver"
-      metaid="D_L_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_L_aver0</ci><ci>D_L_free</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_S_aver"
-      metaid="D_S_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_S_aver0</ci><ci>D_S_free</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_T_aver"
-      metaid="D_T_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_T_aver0</ci><ci>D_T_free</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_K_aver"
-      metaid="D_K_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_K_aver0</ci><ci>D_K_free</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_U_aver"
-      metaid="D_U_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_U_aver0</ci><ci>D_U_free</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="D_P_aver"
-      metaid="D_P_aver::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>D_P_aver0</ci><ci>D_P</ci></apply></math>
-    </assignmentRule>
-    <rateRule
-      variable="response"
-      metaid="response::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <apply>
-          <plus/>
-          <apply>
-            <times/>
-            <cn>1</cn>
-            <ci>v_ir</ci>
-          </apply>
-        </apply>
-      </math>
-    </rateRule>
-  
-  
-  </listOfRules>
-  
-    <listOfEvents>}
+    <listOfEvents>
       <event
         id="single_dose_sw"
         metaid="single_dose_sw"
@@ -2474,7 +2560,7 @@
                 <cn>0</cn>
               </apply>
               
-              }
+              
             </apply>
           </math>
         </trigger>
@@ -2496,87 +2582,6 @@
       </event>
     </listOfEvents>
   
-<!-- UNIT DEFINITIONS -->
-<listOfUnitDefinitions>
-  <unitDefinition id="_h" name="h">
-  <listOfUnits>
-    <unit kind="second" exponent="1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="__mL_g" name="g/mL">
-  <listOfUnits>
-    <unit kind="kilogram" exponent="1" scale="-3" multiplier="1"/>
-    <unit kind="litre" exponent="-1" scale="-3" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_mL" name="mL">
-  <listOfUnits>
-    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_ug" name="ug">
-  <listOfUnits>
-    <unit kind="kilogram" exponent="1" scale="-9" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_dimensionless" name="dimensionless">
-  <listOfUnits>
-    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_ug__mL" name="ug/mL">
-  <listOfUnits>
-    <unit kind="kilogram" exponent="1" scale="-9" multiplier="1"/>
-    <unit kind="litre" exponent="-1" scale="-3" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_mL__h" name="mL/h">
-  <listOfUnits>
-    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_ug__h" name="ug/h">
-  <listOfUnits>
-    <unit kind="kilogram" exponent="1" scale="-9" multiplier="1"/>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="__h" name="1/h">
-  <listOfUnits>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_g" name="g">
-  <listOfUnits>
-    <unit kind="kilogram" exponent="1" scale="-3" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_kdiffUnits" name="kdiffUnits">
-  <listOfUnits>
-    <unit kind="second" exponent="-0.43" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_ug__g" name="ug/g">
-  <listOfUnits>
-    <unit kind="dimensionless" exponent="1" scale="-6" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_mL__h__g" name="mL/h/g">
-  <listOfUnits>
-    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-    <unit kind="kilogram" exponent="-1" scale="-3" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="__ug_mL__h" name="mL/ug/h">
-  <listOfUnits>
-    <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
-    <unit kind="kilogram" exponent="-1" scale="-9" multiplier="1"/>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-</listOfUnitDefinitions>
   
   </model>
 </sbml>

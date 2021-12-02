@@ -14,138 +14,140 @@ $SET end=120, delta=0.1, hmax=0.01, hmin=0, rtol=1e-3, atol=1e-6
 $PARAM @annotated
 // @Const 'reference mouse weight (U)'
 W_animal_061 : 20.8 : (g)
-// @Const ''
+// @Const 
 W_T_061 : 0.366 : (g)
-// @Const ''
+// @Const 
 w_L_061 : 0.0538 : (dimensionless)
-// @Const ''
+// @Const 
 w_S_061 : 0.00601 : (dimensionless)
-// @Const ''
+// @Const 
 w_K_061 : 0.0142 : (dimensionless)
-// @Const ''
+// @Const 
 w_U_061 : 0.00679 : (dimensionless)
-// @Const ''
+// @Const 
 w_B_061 : 0.0814 : (dimensionless)
-// @Const ''
+// @Const 
 delta : 0.0075 : (dimensionless)
-// @Const ''
+// @Const 
 kdiff : 0.00549 : (kdiffUnits)
-// @Const ''
+// @Const 
 gamma : 0.57 : (dimensionless)
 // @Const 'mouse weight for U'
 W_animal : 20.8 : (g)
-// @Const ''
+// @Const 
 W_T : 0.366 : (g)
-// @Const ''
+// @Const 
 w_L : 0.0538 : (dimensionless)
-// @Const ''
+// @Const 
 w_S : 0.00601 : (dimensionless)
-// @Const ''
+// @Const 
 w_K : 0.0142 : (dimensionless)
-// @Const ''
+// @Const 
 w_U : 0.00679 : (dimensionless)
-// @Const ''
+// @Const 
 PS_K_061 : 0.000927 : (mL/h)
-// @Const ''
+// @Const 
 PS_L_061 : 0.0214 : (mL/h)
-// @Const ''
+// @Const 
 PS_R_061 : 0.0579 : (mL/h)
-// @Const ''
+// @Const 
 PS_S_061 : 0.00202 : (mL/h)
-// @Const ''
+// @Const 
 PS_T_061 : 0.00131 : (mL/h)
-// @Const ''
+// @Const 
 PS_U_061 : 0.000122 : (mL/h)
 // @Const 'Injected dose of drug'
 dose_D_ug_g : 2.5 : (ug/g)
-// @Const ''
+// @Const 
 w_B : 0.0814 : (dimensionless)
-// @Const ''
+// @Const 
 Q_L : 181.92 : (mL/h)
-// @Const ''
+// @Const 
 Q_S : 14.88 : (mL/h)
-// @Const ''
+// @Const 
 Q_K : 124.6 : (mL/h)
-// @Const ''
+// @Const 
 Q_U : 678 : (mL/h)
-// @Const ''
+// @Const 
 Q_R : 371.48 : (mL/h)
-// @Const ''
+// @Const 
 Q_T_g : 2.06 : (mL/h/g)
-// @Const ''
+// @Const 
 kel_L_D : 4.75 : (1/h)
-// @Const ''
+// @Const 
 bto_K : 0.0858 : (dimensionless)
-// @Const ''
+// @Const 
 bto_L : 0.141 : (dimensionless)
-// @Const ''
+// @Const 
 bto_S : 0.153 : (dimensionless)
-// @Const ''
+// @Const 
 bto_T : 0.00996 : (dimensionless)
-// @Const ''
+// @Const 
 bto_U : 0.223 : (dimensionless)
 // @Const 'Hematocrit'
 hemato : 0.45 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_BC_D : 3.9 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_S_D : 64.8 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_K_D : 55.6 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_U_D : 76.4 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_L_D : 42 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_R_D : 55.6 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_T_D : 63.2 : (dimensionless)
-// @Const ''
+// @Const 
 b_PS : 1 : (dimensionless)
-// @Const ''
+// @Const 
 koef_resp_K : 79.3 : (dimensionless)
-// @Const ''
+// @Const 
 koef_resp_L : 209 : (dimensionless)
-// @Const ''
+// @Const 
 koef_resp_R : 246 : (dimensionless)
-// @Const ''
+// @Const 
 syn_resp : 1 : (mL/ug/h)
-// @Const ''
+// @Const 
 deg_resp : 2.46 : (1/h)
 // @Const 'To fit the units checking'
 zero_rate : 0 : (ug/h)
 // @Const 'Injected dose of nanoparticles'
 dose_NP_ug_g : 30 : (ug/g)
-// @Const ''
+// @Const 
 Kp_BC_NP : 0 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_L_NP : 1000 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_S_NP : 1000 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_T_NP : 1000 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_K_NP : 1000 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_U_NP : 1000 : (dimensionless)
-// @Const ''
+// @Const 
 Kp_R_NP : 1000 : (dimensionless)
-// @Const ''
+// @Const 
 timezero : 1e-12 : (h)
-// @Const ''
+// @Const 
 conczero : 1e-9 : (ug/mL)
-// @Const ''
+// @Const 
 sigma_K : 0.1 : 
-// @Const ''
+// @Const 
 sigma_L : 0.1 : 
-// @Const ''
+// @Const 
 sigma_S : 0.1 : 
-// @Const ''
+// @Const 
 sigma_T : 0.1 : 
-// @Const ''
+// @Const 
 sigma_U : 0.1 : 
-// @Const ''
+// @Const 
 sigma_P : 0.1 : 
+// @TimeSwitcher 
+single_dose_sw : 1 :
 
 $CMT @annotated
 // @Species 'Free drug in blood'
@@ -211,6 +213,7 @@ $PREAMBLE
 //double NP_K = 0.0;
 //double NP_U = 0.0;
 //double NP_R = 0.0;
+self.mevent(0, 10);
 
 $MAIN
 D_B_amt__0 = (0.0) * V_B;
@@ -228,6 +231,21 @@ NP_T_amt__0 = (0.0) * V_T;
 NP_K_amt__0 = (0.0) * V_K;
 NP_U_amt__0 = (0.0) * V_U;
 NP_R_amt__0 = (0.0) * V_R;
+
+$TABLE
+// single_dose_sw @TimeSwitcher
+if (single_dose_sw && EVID==10 && TIME>0.0) { 
+  mrg::evdata evt_D_B_(TIME, 8);
+  evt_D_B_.amt = dose_D_ug * V_B;
+  evt_D_B_.cmt = 1;
+  evt_D_B_.now = true;
+  self.mevector.push_back(evt_D_B_); 
+  mrg::evdata evt_NP_B_(TIME, 8);
+  evt_NP_B_.amt = dose_NP_ug * V_B;
+  evt_NP_B_.cmt = 9;
+  evt_NP_B_.now = true;
+  self.mevector.push_back(evt_NP_B_);
+}
 
 $ODE
 // @Record ''
