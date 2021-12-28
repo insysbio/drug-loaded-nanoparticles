@@ -12,7 +12,7 @@ jobs:
   build:
     strategy:
       matrix:
-        node-version: [ 8.x ]
+        node-version: [ 10.x ]
         heta-version: [ latest ]
         platform: [ ubuntu-latest ]
 
@@ -37,7 +37,7 @@ jobs:
       run: |
         cp -f ./static/README.md ./dist/
     - name: Deploy to "dist" branch only for "main" and "share" pushes
-      if: ${{ matrix.node-version == '8.x' && github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/share' ) }}
+      if: ${{ matrix.node-version == '10.x' && github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/share' ) }}
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
