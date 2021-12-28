@@ -35,8 +35,7 @@ nameless.species.NP_U = addspecies(nameless.compartment.V_U, 'NP_U', 'ConstantAm
 nameless.species.NP_R = addspecies(nameless.compartment.V_R, 'NP_R', 'ConstantAmount', false, 'InitialAmount', 0, 'InitialAmountUnits', 'microgram/millilitre', 'BoundaryCondition', false, 'Notes', '', 'Tag', '');
 
 % Parameters
-nameless.parameter.rho_avg = addparameter(nameless_model, 'rho_avg', 'ConstantValue', false, 'ValueUnits', 'gram/millilitre', 'Notes', '<p>average tissues density</p>
-', 'Tag', '');
+nameless.parameter.rho_avg = addparameter(nameless_model, 'rho_avg', 'ConstantValue', false, 'ValueUnits', 'gram/millilitre', 'Notes', '<p>average tissues density</p>', 'Tag', '');
 nameless.parameter.response = addparameter(nameless_model, 'response', 'ConstantValue', false, 'Value', 0, 'ValueUnits', 'dimensionless', 'Notes', '', 'Tag', '');
 nameless.parameter.dose_D_ug = addparameter(nameless_model, 'dose_D_ug', 'ConstantValue', false, 'ValueUnits', 'microgram/millilitre', 'Notes', '', 'Tag', '');
 nameless.parameter.D_P = addparameter(nameless_model, 'D_P', 'ConstantValue', false, 'ValueUnits', 'microgram/millilitre', 'Notes', '', 'Tag', '');
@@ -87,126 +86,67 @@ nameless.parameter.D_K_aver = addparameter(nameless_model, 'D_K_aver', 'Constant
 nameless.parameter.D_U_aver = addparameter(nameless_model, 'D_U_aver', 'ConstantValue', false, 'ValueUnits', 'microgram/millilitre', 'Notes', '', 'Tag', '');
 nameless.parameter.D_P_aver = addparameter(nameless_model, 'D_P_aver', 'ConstantValue', false, 'ValueUnits', 'microgram/millilitre', 'Notes', '', 'Tag', '');
 nameless.parameter.v_ir = addparameter(nameless_model, 'v_ir', 'ConstantValue', false, 'ValueUnits', '1/hour', 'Notes', '', 'Tag', '');
-nameless.parameter.W_animal_061 = addparameter(nameless_model, 'W_animal_061', 'ConstantValue', true, 'Value', 20.8, 'ValueUnits', 'gram', 'Notes', '<p>Animal weight</p>
-', 'Tag', '');
-nameless.parameter.W_T_061 = addparameter(nameless_model, 'W_T_061', 'ConstantValue', true, 'Value', 0.366, 'ValueUnits', 'gram', 'Notes', '<p>Tumor weight (reference value)</p>
-', 'Tag', '');
-nameless.parameter.w_L_061 = addparameter(nameless_model, 'w_L_061', 'ConstantValue', true, 'Value', 0.0538, 'ValueUnits', 'dimensionless', 'Notes', '<p>Liver to whole animal weight ratio (reference value)</p>
-', 'Tag', '');
-nameless.parameter.w_S_061 = addparameter(nameless_model, 'w_S_061', 'ConstantValue', true, 'Value', 0.00601, 'ValueUnits', 'dimensionless', 'Notes', '<p>Spleen to whole animal weight ratio (reference value)</p>
-', 'Tag', '');
-nameless.parameter.w_K_061 = addparameter(nameless_model, 'w_K_061', 'ConstantValue', true, 'Value', 0.0142, 'ValueUnits', 'dimensionless', 'Notes', '<p>Kidney to whole animal weight ratio (reference value)</p>
-', 'Tag', '');
-nameless.parameter.w_U_061 = addparameter(nameless_model, 'w_U_061', 'ConstantValue', true, 'Value', 0.00679, 'ValueUnits', 'dimensionless', 'Notes', '<p>Lungs to whole animal weight ratio (reference value)</p>
-', 'Tag', '');
-nameless.parameter.w_B_061 = addparameter(nameless_model, 'w_B_061', 'ConstantValue', true, 'Value', 0.0814, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood to whole animal weight ratio</p>
-', 'Tag', '');
-nameless.parameter.delta = addparameter(nameless_model, 'delta', 'ConstantValue', true, 'Value', 0.0075, 'ValueUnits', 'dimensionless', 'Notes', '<p>&quot;Burst&quot; coefficient for release</p>
-', 'Tag', '');
-nameless.parameter.kdiff = addparameter(nameless_model, 'kdiff', 'ConstantValue', true, 'Value', 0.00549, 'ValueUnits', '1/hour^0.43', 'Notes', '<p>Diffusion coefficient for release</p>
-', 'Tag', '');
-nameless.parameter.gamma = addparameter(nameless_model, 'gamma', 'ConstantValue', true, 'Value', 0.57, 'ValueUnits', 'dimensionless', 'Notes', '<p>Concentration-time coefficient for release</p>
-', 'Tag', '');
-nameless.parameter.W_animal = addparameter(nameless_model, 'W_animal', 'ConstantValue', true, 'Value', 20.8, 'ValueUnits', 'gram', 'Notes', '<p>Animal weight</p>
-', 'Tag', '');
-nameless.parameter.W_T = addparameter(nameless_model, 'W_T', 'ConstantValue', true, 'Value', 0.366, 'ValueUnits', 'gram', 'Notes', '<p>Tumor weight</p>
-', 'Tag', '');
-nameless.parameter.w_L = addparameter(nameless_model, 'w_L', 'ConstantValue', true, 'Value', 0.0538, 'ValueUnits', 'dimensionless', 'Notes', '<p>Liver to whole animal weight ratio</p>
-', 'Tag', '');
-nameless.parameter.w_S = addparameter(nameless_model, 'w_S', 'ConstantValue', true, 'Value', 0.00601, 'ValueUnits', 'dimensionless', 'Notes', '<p>Spleen to whole animal weight ratio</p>
-', 'Tag', '');
-nameless.parameter.w_K = addparameter(nameless_model, 'w_K', 'ConstantValue', true, 'Value', 0.0142, 'ValueUnits', 'dimensionless', 'Notes', '<p>Kidney to whole animal weight ratio</p>
-', 'Tag', '');
-nameless.parameter.w_U = addparameter(nameless_model, 'w_U', 'ConstantValue', true, 'Value', 0.00679, 'ValueUnits', 'dimensionless', 'Notes', '<p>Lungs to whole animal weight ratio</p>
-', 'Tag', '');
-nameless.parameter.PS_K_061 = addparameter(nameless_model, 'PS_K_061', 'ConstantValue', true, 'Value', 0.000927, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for kidney</p>
-', 'Tag', '');
-nameless.parameter.PS_L_061 = addparameter(nameless_model, 'PS_L_061', 'ConstantValue', true, 'Value', 0.0214, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for liver</p>
-', 'Tag', '');
-nameless.parameter.PS_R_061 = addparameter(nameless_model, 'PS_R_061', 'ConstantValue', true, 'Value', 0.0579, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for rest of body</p>
-', 'Tag', '');
-nameless.parameter.PS_S_061 = addparameter(nameless_model, 'PS_S_061', 'ConstantValue', true, 'Value', 0.00202, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for spleen</p>
-', 'Tag', '');
-nameless.parameter.PS_T_061 = addparameter(nameless_model, 'PS_T_061', 'ConstantValue', true, 'Value', 0.00131, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for tumor</p>
-', 'Tag', '');
-nameless.parameter.PS_U_061 = addparameter(nameless_model, 'PS_U_061', 'ConstantValue', true, 'Value', 0.000122, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for lungs</p>
-', 'Tag', '');
-nameless.parameter.dose_D_ug_g = addparameter(nameless_model, 'dose_D_ug_g', 'ConstantValue', true, 'Value', 2.5, 'ValueUnits', 'microgram/gram', 'Notes', '<p>selected based on experimental conditions, per body weight</p>
-', 'Tag', '');
+nameless.parameter.W_animal_061 = addparameter(nameless_model, 'W_animal_061', 'ConstantValue', true, 'Value', 20.8, 'ValueUnits', 'gram', 'Notes', '<p>Animal weight</p>', 'Tag', '');
+nameless.parameter.W_T_061 = addparameter(nameless_model, 'W_T_061', 'ConstantValue', true, 'Value', 0.366, 'ValueUnits', 'gram', 'Notes', '<p>Tumor weight (reference value)</p>', 'Tag', '');
+nameless.parameter.w_L_061 = addparameter(nameless_model, 'w_L_061', 'ConstantValue', true, 'Value', 0.0538, 'ValueUnits', 'dimensionless', 'Notes', '<p>Liver to whole animal weight ratio (reference value)</p>', 'Tag', '');
+nameless.parameter.w_S_061 = addparameter(nameless_model, 'w_S_061', 'ConstantValue', true, 'Value', 0.00601, 'ValueUnits', 'dimensionless', 'Notes', '<p>Spleen to whole animal weight ratio (reference value)</p>', 'Tag', '');
+nameless.parameter.w_K_061 = addparameter(nameless_model, 'w_K_061', 'ConstantValue', true, 'Value', 0.0142, 'ValueUnits', 'dimensionless', 'Notes', '<p>Kidney to whole animal weight ratio (reference value)</p>', 'Tag', '');
+nameless.parameter.w_U_061 = addparameter(nameless_model, 'w_U_061', 'ConstantValue', true, 'Value', 0.00679, 'ValueUnits', 'dimensionless', 'Notes', '<p>Lungs to whole animal weight ratio (reference value)</p>', 'Tag', '');
+nameless.parameter.w_B_061 = addparameter(nameless_model, 'w_B_061', 'ConstantValue', true, 'Value', 0.0814, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood to whole animal weight ratio</p>', 'Tag', '');
+nameless.parameter.delta = addparameter(nameless_model, 'delta', 'ConstantValue', true, 'Value', 0.0075, 'ValueUnits', 'dimensionless', 'Notes', '<p>&quot;Burst&quot; coefficient for release</p>', 'Tag', '');
+nameless.parameter.kdiff = addparameter(nameless_model, 'kdiff', 'ConstantValue', true, 'Value', 0.00549, 'ValueUnits', '1/hour^0.43', 'Notes', '<p>Diffusion coefficient for release</p>', 'Tag', '');
+nameless.parameter.gamma = addparameter(nameless_model, 'gamma', 'ConstantValue', true, 'Value', 0.57, 'ValueUnits', 'dimensionless', 'Notes', '<p>Concentration-time coefficient for release</p>', 'Tag', '');
+nameless.parameter.W_animal = addparameter(nameless_model, 'W_animal', 'ConstantValue', true, 'Value', 20.8, 'ValueUnits', 'gram', 'Notes', '<p>Animal weight</p>', 'Tag', '');
+nameless.parameter.W_T = addparameter(nameless_model, 'W_T', 'ConstantValue', true, 'Value', 0.366, 'ValueUnits', 'gram', 'Notes', '<p>Tumor weight</p>', 'Tag', '');
+nameless.parameter.w_L = addparameter(nameless_model, 'w_L', 'ConstantValue', true, 'Value', 0.0538, 'ValueUnits', 'dimensionless', 'Notes', '<p>Liver to whole animal weight ratio</p>', 'Tag', '');
+nameless.parameter.w_S = addparameter(nameless_model, 'w_S', 'ConstantValue', true, 'Value', 0.00601, 'ValueUnits', 'dimensionless', 'Notes', '<p>Spleen to whole animal weight ratio</p>', 'Tag', '');
+nameless.parameter.w_K = addparameter(nameless_model, 'w_K', 'ConstantValue', true, 'Value', 0.0142, 'ValueUnits', 'dimensionless', 'Notes', '<p>Kidney to whole animal weight ratio</p>', 'Tag', '');
+nameless.parameter.w_U = addparameter(nameless_model, 'w_U', 'ConstantValue', true, 'Value', 0.00679, 'ValueUnits', 'dimensionless', 'Notes', '<p>Lungs to whole animal weight ratio</p>', 'Tag', '');
+nameless.parameter.PS_K_061 = addparameter(nameless_model, 'PS_K_061', 'ConstantValue', true, 'Value', 0.000927, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for kidney</p>', 'Tag', '');
+nameless.parameter.PS_L_061 = addparameter(nameless_model, 'PS_L_061', 'ConstantValue', true, 'Value', 0.0214, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for liver</p>', 'Tag', '');
+nameless.parameter.PS_R_061 = addparameter(nameless_model, 'PS_R_061', 'ConstantValue', true, 'Value', 0.0579, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for rest of body</p>', 'Tag', '');
+nameless.parameter.PS_S_061 = addparameter(nameless_model, 'PS_S_061', 'ConstantValue', true, 'Value', 0.00202, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for spleen</p>', 'Tag', '');
+nameless.parameter.PS_T_061 = addparameter(nameless_model, 'PS_T_061', 'ConstantValue', true, 'Value', 0.00131, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for tumor</p>', 'Tag', '');
+nameless.parameter.PS_U_061 = addparameter(nameless_model, 'PS_U_061', 'ConstantValue', true, 'Value', 0.000122, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Diffusion coefficient for lungs</p>', 'Tag', '');
+nameless.parameter.dose_D_ug_g = addparameter(nameless_model, 'dose_D_ug_g', 'ConstantValue', true, 'Value', 2.5, 'ValueUnits', 'microgram/gram', 'Notes', '<p>selected based on experimental conditions, per body weight</p>', 'Tag', '');
 nameless.parameter.w_B = addparameter(nameless_model, 'w_B', 'ConstantValue', true, 'Value', 0.0814, 'ValueUnits', 'dimensionless', 'Notes', '', 'Tag', '');
-nameless.parameter.Q_L = addparameter(nameless_model, 'Q_L', 'ConstantValue', true, 'Value', 181.92, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through liver</p>
-', 'Tag', '');
-nameless.parameter.Q_S = addparameter(nameless_model, 'Q_S', 'ConstantValue', true, 'Value', 14.88, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through spleen</p>
-', 'Tag', '');
-nameless.parameter.Q_K = addparameter(nameless_model, 'Q_K', 'ConstantValue', true, 'Value', 124.6, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through kidney</p>
-', 'Tag', '');
-nameless.parameter.Q_U = addparameter(nameless_model, 'Q_U', 'ConstantValue', true, 'Value', 678, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through lungs</p>
-', 'Tag', '');
-nameless.parameter.Q_R = addparameter(nameless_model, 'Q_R', 'ConstantValue', true, 'Value', 371.48, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through rest of body</p>
-', 'Tag', '');
-nameless.parameter.Q_T_g = addparameter(nameless_model, 'Q_T_g', 'ConstantValue', true, 'Value', 2.06, 'ValueUnits', 'millilitre/hour/gram', 'Notes', '<p>Blood flux through tumor per gram of tumor</p>
-', 'Tag', '');
-nameless.parameter.kel_L_D = addparameter(nameless_model, 'kel_L_D', 'ConstantValue', true, 'Value', 4.75, 'ValueUnits', '1/hour', 'Notes', '<p>Coefficient of drug elimination in liver</p>
-', 'Tag', '');
-nameless.parameter.bto_K = addparameter(nameless_model, 'bto_K', 'ConstantValue', true, 'Value', 0.0858, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole kidneys volume ratio</p>
-', 'Tag', '');
-nameless.parameter.bto_L = addparameter(nameless_model, 'bto_L', 'ConstantValue', true, 'Value', 0.141, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole liver volume ratio</p>
-', 'Tag', '');
-nameless.parameter.bto_S = addparameter(nameless_model, 'bto_S', 'ConstantValue', true, 'Value', 0.153, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole spleen volume ratio</p>
-', 'Tag', '');
-nameless.parameter.bto_T = addparameter(nameless_model, 'bto_T', 'ConstantValue', true, 'Value', 0.00996, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole tumor volume ratio</p>
-', 'Tag', '');
-nameless.parameter.bto_U = addparameter(nameless_model, 'bto_U', 'ConstantValue', true, 'Value', 0.223, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole lungs volume ratio</p>
-', 'Tag', '');
+nameless.parameter.Q_L = addparameter(nameless_model, 'Q_L', 'ConstantValue', true, 'Value', 181.92, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through liver</p>', 'Tag', '');
+nameless.parameter.Q_S = addparameter(nameless_model, 'Q_S', 'ConstantValue', true, 'Value', 14.88, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through spleen</p>', 'Tag', '');
+nameless.parameter.Q_K = addparameter(nameless_model, 'Q_K', 'ConstantValue', true, 'Value', 124.6, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through kidney</p>', 'Tag', '');
+nameless.parameter.Q_U = addparameter(nameless_model, 'Q_U', 'ConstantValue', true, 'Value', 678, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through lungs</p>', 'Tag', '');
+nameless.parameter.Q_R = addparameter(nameless_model, 'Q_R', 'ConstantValue', true, 'Value', 371.48, 'ValueUnits', 'millilitre/hour', 'Notes', '<p>Blood flux through rest of body</p>', 'Tag', '');
+nameless.parameter.Q_T_g = addparameter(nameless_model, 'Q_T_g', 'ConstantValue', true, 'Value', 2.06, 'ValueUnits', 'millilitre/hour/gram', 'Notes', '<p>Blood flux through tumor per gram of tumor</p>', 'Tag', '');
+nameless.parameter.kel_L_D = addparameter(nameless_model, 'kel_L_D', 'ConstantValue', true, 'Value', 4.75, 'ValueUnits', '1/hour', 'Notes', '<p>Coefficient of drug elimination in liver</p>', 'Tag', '');
+nameless.parameter.bto_K = addparameter(nameless_model, 'bto_K', 'ConstantValue', true, 'Value', 0.0858, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole kidneys volume ratio</p>', 'Tag', '');
+nameless.parameter.bto_L = addparameter(nameless_model, 'bto_L', 'ConstantValue', true, 'Value', 0.141, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole liver volume ratio</p>', 'Tag', '');
+nameless.parameter.bto_S = addparameter(nameless_model, 'bto_S', 'ConstantValue', true, 'Value', 0.153, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole spleen volume ratio</p>', 'Tag', '');
+nameless.parameter.bto_T = addparameter(nameless_model, 'bto_T', 'ConstantValue', true, 'Value', 0.00996, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole tumor volume ratio</p>', 'Tag', '');
+nameless.parameter.bto_U = addparameter(nameless_model, 'bto_U', 'ConstantValue', true, 'Value', 0.223, 'ValueUnits', 'dimensionless', 'Notes', '<p>Blood in organ to whole lungs volume ratio</p>', 'Tag', '');
 nameless.parameter.hemato = addparameter(nameless_model, 'hemato', 'ConstantValue', true, 'Value', 0.45, 'ValueUnits', 'dimensionless', 'Notes', '', 'Tag', '');
-nameless.parameter.Kp_BC_D = addparameter(nameless_model, 'Kp_BC_D', 'ConstantValue', true, 'Value', 3.9, 'ValueUnits', 'dimensionless', 'Notes', '<p>Equilibrium partition coefficient (blood cells vs plasma) for drug, drug-type dependent.</p>
-', 'Tag', '');
-nameless.parameter.Kp_S_D = addparameter(nameless_model, 'Kp_S_D', 'ConstantValue', true, 'Value', 64.8, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in spleen</p>
-', 'Tag', '');
-nameless.parameter.Kp_K_D = addparameter(nameless_model, 'Kp_K_D', 'ConstantValue', true, 'Value', 55.6, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in kidneys</p>
-', 'Tag', '');
-nameless.parameter.Kp_U_D = addparameter(nameless_model, 'Kp_U_D', 'ConstantValue', true, 'Value', 76.4, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in lungs</p>
-', 'Tag', '');
-nameless.parameter.Kp_L_D = addparameter(nameless_model, 'Kp_L_D', 'ConstantValue', true, 'Value', 42, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in liver</p>
-', 'Tag', '');
-nameless.parameter.Kp_R_D = addparameter(nameless_model, 'Kp_R_D', 'ConstantValue', true, 'Value', 55.6, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in rest of body</p>
-', 'Tag', '');
-nameless.parameter.Kp_T_D = addparameter(nameless_model, 'Kp_T_D', 'ConstantValue', true, 'Value', 63.2, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in tumor</p>
-', 'Tag', '');
-nameless.parameter.b_PS = addparameter(nameless_model, 'b_PS', 'ConstantValue', true, 'Value', 1, 'ValueUnits', 'dimensionless', 'Notes', '<p>Scaling factor for PS parameters</p>
-', 'Tag', '');
-nameless.parameter.koef_resp_K = addparameter(nameless_model, 'koef_resp_K', 'ConstantValue', true, 'Value', 79.3, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing response action on kidneys</p>
-', 'Tag', '');
-nameless.parameter.koef_resp_L = addparameter(nameless_model, 'koef_resp_L', 'ConstantValue', true, 'Value', 209, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing response action on liver</p>
-', 'Tag', '');
-nameless.parameter.koef_resp_R = addparameter(nameless_model, 'koef_resp_R', 'ConstantValue', true, 'Value', 246, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing response action on rest of body</p>
-', 'Tag', '');
-nameless.parameter.syn_resp = addparameter(nameless_model, 'syn_resp', 'ConstantValue', true, 'Value', 1, 'ValueUnits', 'millilitre/microgram/hour', 'Notes', '<p>&quot;Synthesis&quot; of indirect response coefficient</p>
-', 'Tag', '');
-nameless.parameter.deg_resp = addparameter(nameless_model, 'deg_resp', 'ConstantValue', true, 'Value', 2.46, 'ValueUnits', '1/hour', 'Notes', '<p>&quot;Degradation&quot; of indirect response coefficient</p>
-', 'Tag', '');
-nameless.parameter.zero_rate = addparameter(nameless_model, 'zero_rate', 'ConstantValue', true, 'Value', 0, 'ValueUnits', 'microgram/hour', 'Notes', '<p>Constant equal to zero to pass units checking for reactions.</p>
-', 'Tag', '');
-nameless.parameter.dose_NP_ug_g = addparameter(nameless_model, 'dose_NP_ug_g', 'ConstantValue', true, 'Value', 30, 'ValueUnits', 'microgram/gram', 'Notes', '<p>selected based on experimental conditions, per body weight</p>
-', 'Tag', '');
-nameless.parameter.Kp_BC_NP = addparameter(nameless_model, 'Kp_BC_NP', 'ConstantValue', true, 'Value', 0, 'ValueUnits', 'dimensionless', 'Notes', '<p>Equilibrium partition coefficient (blood cells vs plasma) for nanoparticles, fixed.</p>
-', 'Tag', '');
-nameless.parameter.Kp_L_NP = addparameter(nameless_model, 'Kp_L_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in liver</p>
-', 'Tag', '');
-nameless.parameter.Kp_S_NP = addparameter(nameless_model, 'Kp_S_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in spleen</p>
-', 'Tag', '');
-nameless.parameter.Kp_T_NP = addparameter(nameless_model, 'Kp_T_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in tumor</p>
-', 'Tag', '');
-nameless.parameter.Kp_K_NP = addparameter(nameless_model, 'Kp_K_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in kidneys</p>
-', 'Tag', '');
-nameless.parameter.Kp_U_NP = addparameter(nameless_model, 'Kp_U_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in lungs</p>
-', 'Tag', '');
-nameless.parameter.Kp_R_NP = addparameter(nameless_model, 'Kp_R_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in rest of body</p>
-', 'Tag', '');
-nameless.parameter.timezero = addparameter(nameless_model, 'timezero', 'ConstantValue', true, 'Value', 1e-12, 'ValueUnits', 'hour', 'Notes', '<p>Minimal time value to use expressions like pow(t + timezero, -gamma, see &quot;vrel&quot;.</p>
-', 'Tag', '');
-nameless.parameter.conczero = addparameter(nameless_model, 'conczero', 'ConstantValue', true, 'Value', 1e-9, 'ValueUnits', 'microgram/millilitre', 'Notes', '<p>Constant that was included to plot in log scale only</p>
-', 'Tag', '');
+nameless.parameter.Kp_BC_D = addparameter(nameless_model, 'Kp_BC_D', 'ConstantValue', true, 'Value', 3.9, 'ValueUnits', 'dimensionless', 'Notes', '<p>Equilibrium partition coefficient (blood cells vs plasma) for drug, drug-type dependent.</p>', 'Tag', '');
+nameless.parameter.Kp_S_D = addparameter(nameless_model, 'Kp_S_D', 'ConstantValue', true, 'Value', 64.8, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in spleen</p>', 'Tag', '');
+nameless.parameter.Kp_K_D = addparameter(nameless_model, 'Kp_K_D', 'ConstantValue', true, 'Value', 55.6, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in kidneys</p>', 'Tag', '');
+nameless.parameter.Kp_U_D = addparameter(nameless_model, 'Kp_U_D', 'ConstantValue', true, 'Value', 76.4, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in lungs</p>', 'Tag', '');
+nameless.parameter.Kp_L_D = addparameter(nameless_model, 'Kp_L_D', 'ConstantValue', true, 'Value', 42, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in liver</p>', 'Tag', '');
+nameless.parameter.Kp_R_D = addparameter(nameless_model, 'Kp_R_D', 'ConstantValue', true, 'Value', 55.6, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in rest of body</p>', 'Tag', '');
+nameless.parameter.Kp_T_D = addparameter(nameless_model, 'Kp_T_D', 'ConstantValue', true, 'Value', 63.2, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for drug in tumor</p>', 'Tag', '');
+nameless.parameter.b_PS = addparameter(nameless_model, 'b_PS', 'ConstantValue', true, 'Value', 1, 'ValueUnits', 'dimensionless', 'Notes', '<p>Scaling factor for PS parameters</p>', 'Tag', '');
+nameless.parameter.koef_resp_K = addparameter(nameless_model, 'koef_resp_K', 'ConstantValue', true, 'Value', 79.3, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing response action on kidneys</p>', 'Tag', '');
+nameless.parameter.koef_resp_L = addparameter(nameless_model, 'koef_resp_L', 'ConstantValue', true, 'Value', 209, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing response action on liver</p>', 'Tag', '');
+nameless.parameter.koef_resp_R = addparameter(nameless_model, 'koef_resp_R', 'ConstantValue', true, 'Value', 246, 'ValueUnits', 'dimensionless', 'Notes', '<p>Coefficient describing response action on rest of body</p>', 'Tag', '');
+nameless.parameter.syn_resp = addparameter(nameless_model, 'syn_resp', 'ConstantValue', true, 'Value', 1, 'ValueUnits', 'millilitre/microgram/hour', 'Notes', '<p>&quot;Synthesis&quot; of indirect response coefficient</p>', 'Tag', '');
+nameless.parameter.deg_resp = addparameter(nameless_model, 'deg_resp', 'ConstantValue', true, 'Value', 2.46, 'ValueUnits', '1/hour', 'Notes', '<p>&quot;Degradation&quot; of indirect response coefficient</p>', 'Tag', '');
+nameless.parameter.zero_rate = addparameter(nameless_model, 'zero_rate', 'ConstantValue', true, 'Value', 0, 'ValueUnits', 'microgram/hour', 'Notes', '<p>Constant equal to zero to pass units checking for reactions.</p>', 'Tag', '');
+nameless.parameter.dose_NP_ug_g = addparameter(nameless_model, 'dose_NP_ug_g', 'ConstantValue', true, 'Value', 30, 'ValueUnits', 'microgram/gram', 'Notes', '<p>selected based on experimental conditions, per body weight</p>', 'Tag', '');
+nameless.parameter.Kp_BC_NP = addparameter(nameless_model, 'Kp_BC_NP', 'ConstantValue', true, 'Value', 0, 'ValueUnits', 'dimensionless', 'Notes', '<p>Equilibrium partition coefficient (blood cells vs plasma) for nanoparticles, fixed.</p>', 'Tag', '');
+nameless.parameter.Kp_L_NP = addparameter(nameless_model, 'Kp_L_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in liver</p>', 'Tag', '');
+nameless.parameter.Kp_S_NP = addparameter(nameless_model, 'Kp_S_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in spleen</p>', 'Tag', '');
+nameless.parameter.Kp_T_NP = addparameter(nameless_model, 'Kp_T_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in tumor</p>', 'Tag', '');
+nameless.parameter.Kp_K_NP = addparameter(nameless_model, 'Kp_K_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in kidneys</p>', 'Tag', '');
+nameless.parameter.Kp_U_NP = addparameter(nameless_model, 'Kp_U_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in lungs</p>', 'Tag', '');
+nameless.parameter.Kp_R_NP = addparameter(nameless_model, 'Kp_R_NP', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'dimensionless', 'Notes', '<p>Partition coefficient for nanoparticles in rest of body</p>', 'Tag', '');
+nameless.parameter.timezero = addparameter(nameless_model, 'timezero', 'ConstantValue', true, 'Value', 1e-12, 'ValueUnits', 'hour', 'Notes', '<p>Minimal time value to use expressions like pow(t + timezero, -gamma, see &quot;vrel&quot;.</p>', 'Tag', '');
+nameless.parameter.conczero = addparameter(nameless_model, 'conczero', 'ConstantValue', true, 'Value', 1e-9, 'ValueUnits', 'microgram/millilitre', 'Notes', '<p>Constant that was included to plot in log scale only</p>', 'Tag', '');
 nameless.parameter.sigma_K = addparameter(nameless_model, 'sigma_K', 'ConstantValue', true, 'Value', 0.1, 'Notes', '', 'Tag', '');
 nameless.parameter.sigma_L = addparameter(nameless_model, 'sigma_L', 'ConstantValue', true, 'Value', 0.1, 'Notes', '', 'Tag', '');
 nameless.parameter.sigma_S = addparameter(nameless_model, 'sigma_S', 'ConstantValue', true, 'Value', 0.1, 'Notes', '', 'Tag', '');
@@ -359,8 +299,7 @@ addrule(nameless_model, 'D_P_aver = D_P_aver0 + D_P', 'repeatedAssignment');
 addrule(nameless_model, 'response = 1*v_ir', 'rate');
 
 % Time Events
-nameless.event.single_dose_sw = addevent(nameless_model, 'time >= 0 && (time - 0) /  - floor((time - 0) /  + 0.5) >= 0', {'D_B = dose_D_ug', 'NP_B = dose_NP_ug', }, 'Active', true, 'Notes', '<p>Switcher describing single dose at 0 time.</p>
-', 'Tag', '');
+nameless.event.single_dose_sw = addevent(nameless_model, 'time >= 0 && (time - 0) /  - floor((time - 0) /  + 0.5) >= 0', {'D_B = dose_D_ug', 'NP_B = dose_NP_ug', }, 'Active', true, 'Notes', '<p>Switcher describing single dose at 0 time.</p>', 'Tag', '');
 
 
 

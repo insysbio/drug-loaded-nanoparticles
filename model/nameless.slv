@@ -916,8 +916,6 @@ F[14] = ( 1*vdist_NP_U-1*vcl_NP_U ) / V_U;
 //!! NP_R  @Species 'Nanoparticles in ROB' {units: ug/mL}
 F[15] = ( 1*vdist_NP_R-1*vcl_NP_R ) / V_R;
 
-
-
 #
 
 <RHS 2

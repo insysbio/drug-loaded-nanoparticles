@@ -147,7 +147,7 @@ sigma_U : 0.1 :
 // @Const 
 sigma_P : 0.1 : 
 // @TimeSwitcher 
-single_dose_sw : 1 :
+single_dose_sw_ : 1 :
 
 $CMT @annotated
 // @Species 'Free drug in blood'
@@ -234,7 +234,7 @@ NP_R_amt__0 = (0.0) * V_R;
 
 $TABLE
 // single_dose_sw @TimeSwitcher
-if (single_dose_sw && EVID==10 && TIME>0.0) { 
+if (single_dose_sw_ && EVID==10 && TIME>0.0) { 
   mrg::evdata evt_D_B_(TIME, 8);
   evt_D_B_.amt = dose_D_ug * V_B;
   evt_D_B_.cmt = 1;
