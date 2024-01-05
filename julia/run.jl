@@ -5,7 +5,7 @@ p = load_platform("./src")
 
 m = p.models[:nameless]
 
-Scenario(m, tspan = (0, 50)) |> sim |> plot
+Scenario(m, (0, 50)) |> sim |> plot
 
 ### Add scenarios
 

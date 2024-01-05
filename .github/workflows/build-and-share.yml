@@ -4,7 +4,7 @@ name: Build and Share
 
 on:
   push:
-    branches: [ main, '*' ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -12,7 +12,7 @@ jobs:
   build:
     strategy:
       matrix:
-        node-version: [ 10.x ]
+        node-version: [ 14.x ]
         heta-version: [ latest ]
         platform: [ ubuntu-latest ]
 
@@ -20,11 +20,11 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         persist-credentials: false
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
     - run: |
@@ -37,9 +37,9 @@ jobs:
       run: |
         cp -f ./static/README.md ./dist/
     - name: Deploy to "dist" branch only for "main" and "share" pushes
-      if: ${{ matrix.node-version == '10.x' && github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/share' ) }}
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+      if: ${{ matrix.node-version == '14.x' && github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/share' ) }}
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: dist # The branch the action should deploy to.
-        FOLDER: dist # The folder the action should deploy.
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: dist # The branch the action should deploy to.
+        folder: dist # The folder the action should deploy.

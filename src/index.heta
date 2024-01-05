@@ -2,14 +2,14 @@
   template file for creating platform
 */
 // add qsp units
-include ./qsp-units.heta
+include ./qsp-units.heta;
 
 // add main model
-include drug-pbpk.heta
-include nanoparticles-pbpk.heta
-include observables.heta
-include scenario.heta
-include parameters.heta
+include drug-pbpk.heta;
+include nanoparticles-pbpk.heta;
+include observables.heta;
+include scenario.heta;
+include parameters.heta;
 
 // exports
 #export { format: JSON, filepath: output };
