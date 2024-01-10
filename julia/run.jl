@@ -22,20 +22,16 @@ add_measurements!(p, data2)
 add_measurements!(p, data3)
 add_measurements!(p, data4)
 
-# measure = get_measuments(p, scenarios=[:T_67_low])
-# measure1 = get_measuments(scenarios(p)[:T_67_low])
-
-# measure2 = get_measurements(res)
-# simulate2 = DataFrame(res)
+# measurements1 = measurements(scenarios(p)[:T_67_low])
 
 res = sim(p)
-plot(res, yscale=:log10, ylims=(1e-1,1e3))
-#plotd = plot(res, yscale=:log10, ylims=(1e-1,1e3))
+plotd = plot(res, yscale=:log10, ylims=(1e-1,1e3))
 #savefig(plotd, "sim1.png")
 
 ### fitting
 
 # to_fit = read_parameters("./julia/parameters.csv")
+# to_fit = read_as_heta("./julia/parameters.csv")
 
 to_fit = [
     :sigma_K => 0.1,
@@ -58,26 +54,27 @@ to_fit = [
     :PS_T_061 => 1.305856e-03,
     :PS_U_061 => 1.217994e-04,
     :Q_T_g => 2.062306e+00,
-    :bto_K_m => 8.579112e-02,
-    :bto_L_m => 1.408861e-01,
-    :bto_S_m => 1.529400e-01,
-    :bto_T_m => 9.959412e-03,
-    :bto_U_m => 2.230023e-01,
+    :bto_K => 8.579112e-02,
+    :bto_L => 1.408861e-01,
+    :bto_S => 1.529400e-01,
+    :bto_T => 9.959412e-03,
+    :bto_U => 2.230023e-01,
     :deg_resp => 2.455650e+00,
-    :kel_L_D_m => 4.749195e+00,
+    :kel_L_D => 4.749195e+00,
     :koef_resp_K => 7.934936e+01,
     :koef_resp_L => 2.091350e+02,
     :koef_resp_R => 2.456379e+02,
-    :tar_S => 9.044673e-01,
-    :w_B_m => 8.138074e-02
+    #:tar_S => 9.044673e-01,
+    :w_B => 8.138074e-02
 ]
-# OFV: 2584
+# OFV: 2584 => 6410
 fit_res = fit(p, to_fit)
 
 optim(fit_res)
 # save_as_heta("julia/fitted.heta", fit_res)
 
-res_optim = sim(p, parameters_upd = optim(fit_res))
+res_optim = sim(p; parameters = optim(fit_res))
+#res_optim = sim(p; parameters = to_fit)
 plot(res_optim, yscale=:log10, ylims=(1e-4,1e3))
 
 ## plot fitted results in files
