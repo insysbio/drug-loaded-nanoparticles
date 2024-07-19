@@ -67,7 +67,7 @@ to_fit = [
     #:tar_S => 9.044673e-01,
     :w_B => 8.138074e-02
 ]
-# OFV: 2584 => 6410
+# OFV: 2584 => 6410 (v0.4.15)
 fit_res = fit(p, to_fit)
 
 optim(fit_res)
